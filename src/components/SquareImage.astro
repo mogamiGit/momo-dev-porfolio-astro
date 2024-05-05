@@ -11,14 +11,14 @@ interface Props {
 const { mobileImgUrl, desktopImgUrl, alt } = Astro.props;
 
 const mobileImg = await getImage({
-    src: mobileImgUrl,
+    src: "/images/" + mobileImgUrl,
     format: "webp",
     width: 300,
     height: 300,
 });
 
 const desktopImg = await getImage({
-    src: desktopImgUrl,
+    src: "/images/" + desktopImgUrl,
     format: "webp",
     width: 600,
     height: 400,
