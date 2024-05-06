@@ -263,11 +263,46 @@ import Bullets from "../components/Bullets.astro";
 	</footer>
 </Layout>
 
-<style>
+<style is:global>
+	@font-face {
+    font-family: 'Hubot Sans';
+    src:
+        url('/fonts/Hubot-Sans.woff2') format('woff2 supports variations'),
+        url('/fonts/Hubot-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+	}
+
 	html {
+		font-family: 'Hubot Sans', system-ui, sans-serif;
 		scroll-behavior: smooth;
 		animation: ease-in;
 		animation-duration: 1000ms;
+	}
+
+	html.dark {
+		background-color: #03001C;
+		color: #fff;
+	}
+
+	.dark .nav-links a {
+		color: #fff;
+	}
+
+	.dark header {
+		background-color: black;
+	}
+
+	body {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		font-size: medium;
+	}
+
+	section {
+		max-width: 1240px;
+		padding-bottom: 60px;
 	}
 </style>
 
