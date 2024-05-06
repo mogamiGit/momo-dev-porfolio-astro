@@ -1,35 +1,41 @@
 
+---
+import ThemeIcon from "../components/ThemeIcon.astro";
+---
 <header id="header" class="sticky-menu py-4">
     <div class="flex justify-between max-w-[1240px] mx-auto">
-        <nav class="flex flex-row gap-x-8 px-6 lg:px-0">
+        <nav class="w-full flex justify-between px-6 lg:px-0">
+          <div class="flex flex-row gap-x-8">
             <a href="#" class="font-bold">></a>
             <a class="hover:font-bold duration-200" href="#projects">Projects</a>
             <a class="hover:font-bold duration-200" href="#experience">Experience</a>
             <a class="hover:font-bold duration-200" href="#about">About me</a>
+          </div>
+          <ThemeIcon />
         </nav>
     </div>
 </header>
 
 <style>
-    .sticky-menu {
+  .sticky-menu {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
-    }
+  }
 </style>
 
 <script>
-    const myDiv = document.getElementById('header'); // Get the div element
+  const myDiv = document.getElementById('header'); // Get the div element
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY === 0) {
-    myDiv.classList.remove('bg-opacity-80');
-    myDiv.classList.remove('bg-white');
-  } else {
-    myDiv.classList.add('bg-white'); // Remove initial background
-    myDiv.classList.add('bg-opacity-80'); // Add new background on scroll down
-  }
-});
+  window.addEventListener('scroll', () => {
+    if (window.scrollY === 0) {
+      myDiv.classList.remove('bg-opacity-80');
+      myDiv.classList.remove('bg-white');
+    } else {
+      myDiv.classList.add('bg-white'); // Remove initial background
+      myDiv.classList.add('bg-opacity-80'); // Add new background on scroll down
+    }
+  });
 </script>
 
