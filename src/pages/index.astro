@@ -10,9 +10,9 @@ import ListItem from "../components/ListItem.astro";
 import Bullets from "../components/Bullets.astro";
 ---
 
-<Layout title="Hello there!">
+<Layout title="Mogami Porfolio">
 	<main>
-		<div id="arrow-to-top" class="fixed bottom-0 right-0 w-full flex justify-center items-center mb-10 hover:animate-bounce duration-1000 opacity-0">
+		<div id="arrow-to-top" class="fixed bottom-0 right-0 w-full flex justify-center items-center mb-10 hover:animate-bounce duration-1000 opacity-0 z-10">
 			<a href="#">
 				<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60ZM36.6582 39H41.25L32.7092 19.5H27.3367L18.75 39H23.3418L29.8622 24.0485H30.2296L36.6582 39Z" fill="#FFD121"/>
@@ -151,8 +151,8 @@ import Bullets from "../components/Bullets.astro";
 								linkProject="https://github.com/mogamiGit/Ohtaku">
 								<SquareImage
 									slot="picture"
-									mobileImgUrl="https://placehold.co/600x400"
-									desktopImgUrl="https://placehold.co/500"
+									mobileImgUrl="project02-image-mobile.jpg"
+									desktopImgUrl="project02-image-desktop.jpg"
 									alt="user profile picture"/>
 								<div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
 									<Check>Lottie animation</Check>
@@ -290,7 +290,11 @@ import Bullets from "../components/Bullets.astro";
 	}
 
 	.dark header {
-		background-color: black;
+		background-image: linear-gradient(to bottom, rgba(3, 0, 28, 1), transparent);
+	}
+
+	header {
+		background-image: linear-gradient(to bottom, #fff, transparent);
 	}
 
 	body {
@@ -307,15 +311,24 @@ import Bullets from "../components/Bullets.astro";
 </style>
 
 <script>
-    const myDiv = document.getElementById('arrow-to-top');
+	const myDiv = document.getElementById('arrow-to-top');
+	const header = document.getElementById('header');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY === 0) {
-    myDiv.classList.add('opacity-0');
-    myDiv.classList.remove('opacity-100');
-  } else {
-    myDiv.classList.remove('opacity-0'); 
-    myDiv.classList.add('opacity-100');
-  }
-});
+	window.addEventListener('scroll', () => {
+	if (window.scrollY === 0) {
+		myDiv.classList.add('opacity-0');
+		myDiv.classList.remove('opacity-100');
+	} else {
+		myDiv.classList.remove('opacity-0'); 
+		myDiv.classList.add('opacity-100');
+	}
+	});
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY === 0) {
+      header.classList.remove('bg-opacity-80');
+    } else {
+      header.classList.add('bg-opacity-80');
+    }
+  });
 </script>
