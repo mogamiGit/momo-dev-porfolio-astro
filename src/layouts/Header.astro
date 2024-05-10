@@ -25,17 +25,3 @@ import ThemeIcon from "../components/ThemeIcon.astro";
   }
 </style>
 
-<script>
-  const myDiv = document.getElementById('header'); // Get the div element
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY === 0) {
-      myDiv.classList.remove('bg-opacity-80');
-      myDiv.classList.remove('bg-white');
-    } else {
-      myDiv.classList.add('bg-white'); // Remove initial background
-      myDiv.classList.add('bg-opacity-80'); // Add new background on scroll down
-    }
-  });
-</script>
-
