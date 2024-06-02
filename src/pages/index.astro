@@ -8,8 +8,8 @@ import TitleSection from "../components/TitleSection.astro";
 import TitleSymbol from "../components/TitleSymbol.astro";
 import ListItem from "../components/ListItem.astro";
 import Bullets from "../components/Bullets.astro";
+import Button from "../components/Button.astro";
 ---
-
 <Layout title="Mogami Porfolio">
 	<main>
 		<div id="arrow-to-top" class="fixed bottom-0 right-0 w-full flex justify-center items-center mb-10 hover:animate-bounce duration-1000 opacity-0 z-10">
@@ -21,12 +21,12 @@ import Bullets from "../components/Bullets.astro";
 		</div>
 		<section
 			class="w-full mx-auto flex flex-col-reverse md:flex-row justify-between gap-x-10 items-top">
-			<div class="flex justify-center flex-col px-6 xl:px-0 space-y-6 gap-4 lg:max-w-md md:max-w-sm">
-				<div class="sm:pt-8">
+			<div class="flex justify-center flex-col px-6 md:py-6 xl:px-0 space-y-6 gap-4 md:gap-2 lg:max-w-md md:max-w-sm">
+				<div class="sm:pt-12">
 					<h1 class="text-xl text-blue-violet animate-fade-right animate-once animate-delay-1000 animate-ease-in-out">
 						iOS Developer · Digital Designer
 					</h1>
-					<h2 class="font-kalnia text-6xl animate-fade-down animate-once animate-duration-[600ms]  animate-ease-linear">
+					<h2 id="subtitle" class="font-kalnia text-6xl md:text-5xl lg:text-6xl animate-fade-down animate-once animate-duration-[600ms]  animate-ease-linear">
 						Hi, my name is Mónica Galán
 					</h2>
 				</div>
@@ -96,9 +96,7 @@ import Bullets from "../components/Bullets.astro";
 							class="border-b border-blue-violet dark:border-gray-700">
 							<ProjectContent
 								synopsis="Data Managemnet App"
-								description="Empowers Dungeon Masters (DMs) to effortlessly manage their parties and access crucial Dungeons & Dragons data, streamlining the game experience"
-								textButton="Enter the dungeon"
-								linkProject="https://github.com/mogamiGit/Dungeon-Crawl">
+								description="Empowers Dungeon Masters (DMs) to effortlessly manage their parties and access crucial Dungeons & Dragons data, streamlining the game experience">
 								<SquareImage
 									slot="picture"
 									mobileImgUrl="project01-image-mobile.jpg"
@@ -108,6 +106,30 @@ import Bullets from "../components/Bullets.astro";
 									<Check>iOS17 - ScrollView new</Check>
 									<Check>SwiftData</Check>
 									<Check>Async Await</Check>
+								</div>
+								<div slot="buttons">
+									<Button
+									textButton="See the flow of dungeon"
+									linkProject="https://www.figma.com/proto/1P0S2xuMXPOnG1txYnEDmI/Dungeon-Crawl-DnD-App?node-id=593-5760&viewport=-1169%2C238%2C0.16&t=hSmtEpWWlch2yrjX-0&scaling=scale-down&starting-point-node-id=593%3A5760">
+									<div slot="icon">
+										<img 
+											class="w-4 h-4" 
+											src="images/figma-icon.svg" 
+											alt="figma icon"
+										/>
+									</div>
+									</Button>
+									<Button
+									textButton="Enter the dungeon"
+									linkProject="https://github.com/mogamiGit/Dungeon-Crawl">
+									<div slot="icon">
+										<img 
+											class="w-4 h-4" 
+											src="images/github-icon.svg" 
+											alt="github icon"
+										/>
+									</div>
+									</Button>
 								</div>
 							</ProjectContent>
 						</div>
@@ -146,9 +168,7 @@ import Bullets from "../components/Bullets.astro";
 							class="border-b border-blue-violet dark:border-gray-700">
 							<ProjectContent
 								synopsis="Tracker App"
-								description="Discover and track your favorite anime. Dive into a vast database of titles, consult detailed information, and effortlessly track your progress with a tap."
-								textButton="Embark on an epic Adventure"
-								linkProject="https://github.com/mogamiGit/Ohtaku">
+								description="Discover and track your favorite anime. Dive into a vast database of titles, consult detailed information, and effortlessly track your progress with a tap.">
 								<SquareImage
 									slot="picture"
 									mobileImgUrl="project02-image-mobile.jpg"
@@ -157,6 +177,19 @@ import Bullets from "../components/Bullets.astro";
 								<div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
 									<Check>Lottie animation</Check>
 									<Check>Local management</Check>
+								</div>
+								<div slot="buttons">
+									<Button
+									textButton="Start your Isekai Adventure"
+									linkProject="https://github.com/mogamiGit/Ohtaku">
+									<div slot="icon">
+										<img 
+											class="w-4 h-4" 
+											src="images/github-icon.svg" 
+											alt="github icon"
+										/>
+									</div>
+									</Button>
 								</div>
 							</ProjectContent>
 						</div>
@@ -291,10 +324,12 @@ import Bullets from "../components/Bullets.astro";
 
 	.dark header {
 		background-image: linear-gradient(to bottom, rgba(3, 0, 28, 1), transparent);
+		box-shadow: 0 2px 40px rgba(0, 0, 0, 0.8);
 	}
 
 	header {
 		background-image: linear-gradient(to bottom, #fff, transparent);
+		box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
 	}
 
 	body {
@@ -307,6 +342,15 @@ import Bullets from "../components/Bullets.astro";
 	section {
 		max-width: 1240px;
 		padding-bottom: 60px;
+	}
+
+	@media (max-width: 599px) {
+		header {
+			background: rgba(255, 255, 255, 0.7);
+		}
+		.dark header {
+		 	background: rgba(3, 0, 28, 0.8);
+		}
 	}
 </style>
 
