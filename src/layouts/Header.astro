@@ -1,19 +1,25 @@
-
 ---
 import ThemeIcon from "../components/ThemeIcon.astro";
 ---
-<header id="header" class="sticky-menu py-4">
-    <div class="flex justify-between max-w-[1240px] mx-auto">
-        <nav class="w-full flex justify-between px-6 lg:px-0">
-          <div class="flex flex-row gap-x-8">
-            <a href="#" class="font-bold">></a>
-            <a class="hover:font-bold duration-200" href="#projects">Projects</a>
-            <a class="hover:font-bold duration-200" href="#experience">Experience</a>
-            <a class="hover:font-bold duration-200" href="#about">About me</a>
-          </div>
-          <ThemeIcon />
-        </nav>
-    </div>
+
+<header id="header" class="sticky-menu">
+  <div class="max-w-[1240px] mx-auto items-start">
+    <nav class="w-full flex justify-between">
+      <div class="w-full flex my-auto">
+        <div id="menu-toggle">
+          <span class="text-2xl">></span>
+        </div>
+        <div id="menu" class="menu menu-hidden flex h-full">
+          <a class="hover:font-bold duration-200" href="#projects">Projects</a>
+          <a class="hover:font-bold duration-200" href="#experience"
+            >Experience</a
+          >
+          <a class="hover:font-bold duration-200" href="#about">About me</a>
+        </div>
+      </div>
+      <ThemeIcon />
+    </nav>
+  </div>
 </header>
 
 <style>
@@ -22,6 +28,88 @@ import ThemeIcon from "../components/ThemeIcon.astro";
     top: 0;
     width: 100%;
     z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+
+  nav div {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu {
+    transition: transform 0.3s ease-in-out;
+    gap: 2rem;
+  }
+
+  #menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px 16px;
+  }
+
+  @media (max-width: 1250px) {
+    .menu {
+      padding: 0 1rem;
+    }
+  }
+
+  @media (max-width: 599px) {
+    nav {
+      align-items: baseline;
+    }
+
+    nav div {
+      flex-direction: column;
+      align-items: baseline;
+      padding: 0;
+    }
+
+    #menu-toggle {
+      display: block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #menu {
+      padding: 1.5rem 1rem;
+    }
+
+    .menu {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+      display: none;
+    }
+
+    .menu-visible {
+      display: flex;
+    }
+
+    .menu-hidden {
+      display: none;
+    }
   }
 </style>
 
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+  const header = document.getElementById("header");
+
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("menu-visible");
+    menu.classList.toggle("menu-hidden");
+    menuToggle.classList.toggle("rotate-90");
+    menuToggle.classList.toggle("text-blue-violet");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target instanceof Node && !header.contains(event.target)) {
+      if (menu.classList.contains("menu-visible")) {
+        menu.classList.remove("menu-visible");
+        menu.classList.add("menu-hidden");
+        menuToggle.classList.remove("rotate-90");
+        menuToggle.classList.remove("text-blue-violet");
+      }
+    }
+  });
+</script>
