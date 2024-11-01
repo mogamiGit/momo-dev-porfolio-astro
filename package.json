@@ -14,6 +14,7 @@
     "@astrojs/cloudflare": "^11.1.0",
     "@astrojs/react": "^3.3.2",
     "@astrojs/tailwind": "^5.1.1",
+    "@jridgewell/sourcemap-codec": "^1.5.0",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.11",
@@ -25,5 +26,8 @@
     "tailwindcss-animated": "^1.0.1",
     "typescript": "^5.4.5",
     "ws": "^8.17.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.5"
   }
 }

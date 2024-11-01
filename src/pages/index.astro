@@ -9,6 +9,7 @@ import TitleSymbol from "../components/TitleSymbol.astro";
 import ListItem from "../components/ListItem.astro";
 import Bullets from "../components/Bullets.astro";
 import Button from "../components/Button.astro";
+import Tag from "../components/Tag.astro";
 ---
 <Layout title="Mogami Porfolio">
 	<main>
@@ -22,9 +23,12 @@ import Button from "../components/Button.astro";
 		<section
 			class="w-full mx-auto flex flex-col-reverse md:flex-row justify-between gap-x-10 items-top">
 			<div class="flex justify-center flex-col px-6 md:py-6 xl:px-0 space-y-6 gap-4 md:gap-2 lg:max-w-md md:max-w-sm">
-				<div class="sm:pt-12">
+				<div class="sm:mt-20 md:mt-35 flex flex-col gap-2">
+					<div id="tags" class="pb-3">
+						<span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-4 py-2 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Open to Work 👩‍💻</span>
+					</div>
 					<h1 class="text-xl text-blue-violet animate-fade-right animate-once animate-delay-1000 animate-ease-in-out">
-						iOS Developer · Digital Designer
+						Graphic Designer · Front-End Dev
 					</h1>
 					<h2 id="subtitle" class="font-kalnia text-6xl md:text-5xl lg:text-6xl animate-fade-down animate-once animate-duration-[600ms]  animate-ease-linear">
 						Hi, my name is Mónica Galán
@@ -38,7 +42,7 @@ import Button from "../components/Button.astro";
 				<img class="w-full" src="images/image-hero.png" alt="" />
 			</div>
 		</section>
-		<section id="sintetic" class="w-full mx-auto flex md:flex-row sm:flex-col justify-center gap-10 px-5 flex-wrap">
+		<section id="sintetic" class="w-full mx-auto flex md:flex-row sm:flex-col justify-center gap-10 px-8 flex-wrap">
 			<div class="flex flex-col justify-center items-center gap-1 lg:py-0 md:py-5">
 				<p class="text-3xl text-yellow-chick animate-jump-in animation-duration-1000 animate-delay-100">8+</p>
 				<p>Years of Experience</p>
@@ -252,35 +256,52 @@ import Button from "../components/Button.astro";
 						</p>
 					</div>
 				</div>
-				<div class="px-5 pt-6 flex flex-col gap-12">
+				<div class="pt-6 flex flex-col gap-12">
 					<div class="mt-10">
 						<TitleSymbol>Hard skills</TitleSymbol>
-						<div class="flex gap-x-10 gap-y-4 flex-wrap mt-6">
+						<div class="flex gap-x-10 gap-y-8 flex-wrap mt-6">
 							<Bullets 
-								title="Languages"
-								description="Swift">
+								title="Languages">
+								<Tag text="HTML" />
+								<Tag text="CSS" />
+								<Tag text="JS" />
+								<Tag text="Swift" />
 							</Bullets>
 							<Bullets 
-								title="Frameworks and SDKs"
-								description="SwiftUI · UIKit · SwiftData">
+								title="Frameworks and SDKs">
+								<Tag text="Astro" />
+								<Tag text="Svelte" />
+								<Tag text="SwiftUI" />
+								<Tag text="SwiftData" />
 							</Bullets>
 							<Bullets 
-								title="Patterns"
-								description="MVVM · MVC · Viper">
+								title="Patterns">
+								<Tag text="MVVM" />
+								<Tag text="MVC" />
 							</Bullets>
 							<Bullets 
-								title="Methodologies"
-								description="Design Thinking · Atomic Design · Mobile First · Agile">
+								title="Tools & Technologies">
+								<Tag text="Figma" />
+								<Tag text="RESTful APIs" />
+								<Tag text="Postman" />
 							</Bullets>
 							<Bullets 
-								title="Other skills"
-								description="RESTful APIs · Postman · Figma">
+								title="Methodologies">
+								<Tag text="Design Thinking" />
+								<Tag text="Atomic Design" />
+								<Tag text="Mobile First" />
+								<Tag text="Agile" />
 							</Bullets>
 						</div>
 					</div>
-					<div>
+					<div class="flex flex-col gap-6">
 						<TitleSymbol>Soft skills</TitleSymbol>
-						<p class="text-xl mt-4">Constantly changing · Self-taught · Problem solving · Teamwork</p>
+						<div class="flex flex-wrap gap-y-2">
+							<Tag text="Constantly changing" />
+							<Tag text="Self-taught" />
+							<Tag text="Problem solving" />
+							<Tag text="Teamwork" />
+						</div>
 					</div>
 					<picture>
 						
