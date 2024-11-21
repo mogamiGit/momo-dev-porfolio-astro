@@ -2,14 +2,35 @@
 import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
-<header id="header" class="sticky-menu">
+<header id="header" class="sticky-menu py-1">
   <div class="max-w-[1240px] mx-auto items-start">
     <nav class="w-full flex justify-between">
       <div class="w-full flex my-auto">
         <div id="menu-toggle">
           <span class="text-2xl">></span>
         </div>
-        <div id="menu" class="menu menu-hidden flex h-full">
+        <div id="menu" class="menu menu-hidden flex flex-row">
+          <div id="logo">
+            <svg 
+              class="h-8 w-auto dark:inline fill-black dark:fill-white"
+              viewBox="0 0 99 59"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_154_177)">
+              <path d="M29.8287 0H14.5348V10.9331H16.0184L37.5559 58.2005H46.8449L61.5595 9.20686H62.7925V0H61.8061L50.4619 42.2529H47.5848L29.8287 0Z" fill="currentColor" />
+              <path d="M10.9097 57.3785V58.2006H2.02566V56.4743H4.49774L10.9097 57.3785Z" fill="currentColor"/>
+              <path d="M92.2801 58.2005C89.1582 58.2005 87.6573 56.1999 87.6573 53.5324V36.436C87.6573 33.2834 85.9163 31.5253 83.8751 31.5253H82.8545V27.0996H83.8751C85.9763 27.0996 87.6573 25.2809 87.6573 22.1283V4.66817C87.6573 2.00064 89.1582 0 92.2801 0H98.5238V4.18316H92.8204V22.0677C92.8204 25.8265 91.1394 28.6153 88.1376 29.0396V29.2821C91.1995 30.0096 92.8204 32.7378 92.8204 36.3753V54.0174H98.5238V58.2005H92.2801Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M84.2416 0H62.683V56.4743L57.5042 57.3785V58.2005L84.2416 58.2005C81.1197 58.2005 79.6188 56.1999 79.6188 53.5324V37.0265C79.6188 33.874 77.8778 32.1159 75.8365 32.1159H74.8159V26.5091H75.8365C77.9378 26.5091 79.6188 24.6903 79.6188 21.5378V4.66817C79.6188 2.00064 81.1197 0 84.2416 0Z" fill="currentColor"/>
+              <path d="M28.993 0H9.22947C12.3513 0 13.8522 2.00064 13.8522 4.66817H30.788L28.993 0Z" fill="currentColor"/>
+              <path d="M0.253906 58.2005L14.9668 0H21.1091L6.32477 58.2005H0.253906Z" fill="currentColor"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_154_177">
+              <rect width="98.27" height="58.2005" fill="white" transform="translate(0.253906)"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </div>
           <a class="hover:font-bold duration-200" href="#projects">Projects</a>
           <a class="hover:font-bold duration-200" href="#experience"
             >Experience</a

@@ -9,7 +9,10 @@ export default {
 			fontFamily: {
 				'kalnia': ['kalnia', 'Georgia', 'serif'],
 				'hubot': ['Hubot-Sans', 'Helvetica', 'sans-serif']
-			}
+			},
+			borderWidth: {
+				'light' : '0.5px'
+			},
 		},
 		colors: {
 			'white': '#ffffff',
