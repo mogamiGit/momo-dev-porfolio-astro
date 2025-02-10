@@ -10,6 +10,7 @@ import ListItem from "../components/ListItem.astro";
 import Bullets from "../components/Bullets.astro";
 import Button from "../components/Button.astro";
 import Tag from "../components/Tag.astro";
+import ListItem2 from "../components/ListItem.tsx";
 ---
 <Layout title="Mogami Porfolio">
 	<main>
@@ -206,6 +207,7 @@ import Tag from "../components/Tag.astro";
 					<div class="grid grid-cols-1 gap-14 md:grid-cols-2">
 						<div>
 							<TitleSymbol>Education</TitleSymbol>
+							<ListItem2 client:load year="2025" title="fbddhd" subtitle="vdfvdfb"/>
 							<ListItem
 								year="2024"
 								title="Ironhack"
