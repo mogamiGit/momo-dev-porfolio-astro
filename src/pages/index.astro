@@ -4,12 +4,15 @@ import ProjectButton from "../components/ProjectButton.astro";
 import ProjectContent from "../components/ProjectContent.astro";
 import Check from "../components/Check.astro";
 import SquareImage from "../components/SquareImage.astro";
-import TitleSection from "../components/TitleSection.astro";
 import TitleSymbol from "../components/TitleSymbol.astro";
 import Bullets from "../components/Bullets.astro";
 import Button from "../components/Button.astro";
 import Tag from "../components/Tag.astro";
 import ListItem from "../components/ListItem.tsx";
+import HighlightedTitle from "../components/HighlightedTitle";
+import H1 from "../components/H1.tsx";
+import H4 from "../components/H4.tsx";
+import TitleSection from "../components/TitleSection.tsx"
 ---
 <Layout title="Mogami Porfolio">
 	<main>
@@ -27,12 +30,8 @@ import ListItem from "../components/ListItem.tsx";
 					<div id="tags" class="pb-3">
 						<span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-4 py-2 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Open to Work 👩‍💻</span>
 					</div>
-					<h1 class="text-lg text-blue-violet animate-fade-right animate-once animate-delay-1000 animate-ease-in-out">
-						Freelance Graphic Designer · Front-End Dev
-					</h1>
-					<h2 id="subtitle" class="font-kalnia text-6xl md:text-5xl lg:text-6xl animate-fade-down animate-once animate-duration-[600ms]  animate-ease-linear">
-						Hi, my name is Mónica Galán
-					</h2>
+					<H4 client:load text="Freelance Graphic Designer · Front-End Dev" />
+					<H1 client:load text="Hi, my name is Mónica Galán"  />
 				</div>
 				<p>
 					Front-end Developer with a passion for web design and design systems. Skilled at crafting user-friendly and visually appealing interfaces, with a commitment to creating innovative web experiences and continuously advancing front-end development skills.
@@ -43,24 +42,15 @@ import ListItem from "../components/ListItem.tsx";
 			</div>
 		</section>
 		<section id="sintetic" class="w-full mx-auto flex md:flex-row sm:flex-col justify-center gap-10 px-8 flex-wrap">
-			<div class="flex flex-col justify-center items-center gap-1 lg:py-0 md:py-5">
-				<p class="text-3xl text-yellow-chick animate-jump-in animation-duration-1000 animate-delay-100">8+</p>
-				<p>Years of Experience</p>
-			</div>
+			<HighlightedTitle client:load title="8+" subtitle="Years of Experience"/>
 			<div class="border-r hidden md:block border-gray-300 w-3"></div>
-			<div class="flex flex-col justify-center items-center gap-1 md:py-5">
-				<p class="text-2xl text-yellow-chick animate-jump-in animation-duration-1000 animate-delay-200">Multidisciplinary</p>
-				<p>Profesional profile</p>
-			</div>
+			<HighlightedTitle client:load title="Multidisciplinary" subtitle="Profesional profile"/>
 			<div class="border-r hidden md:block border-gray-300 w-3"></div>
-			<div class="flex flex-col justify-center items-center gap-1 md:py-5">
-				<p class="text-2xl text-yellow-chick animate-jump-in animation-duration-1000 animate-delay-300">UX / UI</p>
-				<p>Design passionate</p>
-			</div>
+			<HighlightedTitle client:load title="UX / UI" subtitle="Design passionate"/>
 		</section>
 		<div class="flex flex-col px-8">
 			<section id="projects" class="w-full mx-auto pt-20" data-scroll="seccion1">
-				<TitleSection>projects</TitleSection>
+				<TitleSection client:load text="projects" />
 				<div
 					id="accordion-flush"
 					data-accordion="collapse"
@@ -201,7 +191,7 @@ import ListItem from "../components/ListItem.tsx";
 				</div>
 			</section>
 			<section id="experience" class="w-full mx-auto pt-20" data-scroll="seccion2">
-				<TitleSection>experience</TitleSection>
+				<TitleSection client:load text="experience" />
 				<div class="px-5 pt-8">
 					<div class="grid grid-cols-1 gap-14 md:grid-cols-2">
 						<div>
@@ -258,7 +248,7 @@ import ListItem from "../components/ListItem.tsx";
 					<img src="images/profile_photo.png" alt="profile image" class="max-w-80">
 					<div class="flex flex-col lg:flex-row gap-6">
 						<div>
-							<TitleSection>about_me</TitleSection>
+							<TitleSection client:load text="about_me" />
 						</div>
 						<p>Hey you! I'm the creative mind behind the keyboard. Constantly on the move and infusing energy into every project.
 						<br><br>My mantra is simple: learn, design, develop, have fun, repeat! Because, honestly, why should the process of creating something incredible be boring? I love pushing boundaries, exploring new trends, and finding the perfect balance between functionality and style.

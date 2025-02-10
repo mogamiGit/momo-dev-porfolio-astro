@@ -35,7 +35,7 @@ const ListItem: React.FC<Props> = ({ year, title, subtitle }) => {
     visible: { y: 0, opacity: 1 },
   };
 
-  return (
+  return(
     <motion.div 
       className={containerClass}
       initial="hidden"
@@ -52,7 +52,7 @@ const ListItem: React.FC<Props> = ({ year, title, subtitle }) => {
             [
           </motion.p>
           <motion.p
-            className="font-kalnia font-bold text-gray-800"
+            className="font-kalnia font-bold"
             variants={yearAnimation}
             transition={{
               scaleY: { duration: 0.5, type: "damping", bounce: 0.2 },
