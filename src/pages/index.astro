@@ -7,7 +7,7 @@ import SquareImage from "../components/SquareImage.astro";
 import TitleSymbol from "../components/TitleSymbol.astro";
 import Bullets from "../components/Bullets.astro";
 import Button from "../components/Button.astro";
-import Tag from "../components/Tag.astro";
+import Tag from "../components/Tag.tsx";
 import ListItem from "../components/ListItem.tsx";
 import HighlightedTitle from "../components/HighlightedTitle";
 import H1 from "../components/H1.tsx";
@@ -27,8 +27,8 @@ import TitleSection from "../components/TitleSection.tsx"
 			class="w-full mx-auto flex flex-col-reverse md:flex-row justify-between gap-x-10 items-top">
 			<div class="flex justify-center flex-col px-6 md:py-6 xl:px-0 space-y-6 gap-4 md:gap-2 lg:max-w-md md:max-w-sm">
 				<div class="sm:mt-20 md:mt-35 flex flex-col gap-2">
-					<div id="tags" class="pb-3">
-						<span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-4 py-2 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Open to Work 👩‍💻</span>
+					<div id="tag" class="pb-3">
+						<Tag client:load text="Open to Work 👩‍💻" variant="yellow" delay={1.3} />
 					</div>
 					<H4 client:load text="Freelance Graphic Designer · Front-End Dev" />
 					<H1 client:load text="Hi, my name is Mónica Galán"  />
@@ -262,45 +262,45 @@ import TitleSection from "../components/TitleSection.tsx"
 						<div class="flex gap-x-10 gap-y-8 flex-wrap mt-6">
 							<Bullets 
 								title="Languages">
-								<Tag text="HTML" />
-								<Tag text="CSS" />
-								<Tag text="JS" />
-								<Tag text="Swift" />
+								<Tag client:load text="HTML" variant="gray" />
+								<Tag client:load text="CSS" variant="gray" />
+								<Tag client:load text="JS" variant="gray" />
+								<Tag client:load text="Swift" variant="gray" />
 							</Bullets>
 							<Bullets 
 								title="Frameworks and SDKs">
-								<Tag text="Astro" />
-								<Tag text="Svelte" />
-								<Tag text="SwiftUI" />
-								<Tag text="SwiftData" />
+								<Tag client:load text="Astro" variant="gray" />
+								<Tag client:load text="Svelte" variant="gray" />
+								<Tag client:load text="SwiftUI" variant="gray" />
+								<Tag client:load text="SwiftData" variant="gray" />
 							</Bullets>
 							<Bullets 
 								title="Patterns">
-								<Tag text="MVVM" />
-								<Tag text="MVC" />
+								<Tag client:load text="MVVM" variant="gray" />
+								<Tag client:load text="MVC" variant="gray" />
 							</Bullets>
 							<Bullets 
 								title="Tools & Technologies">
-								<Tag text="Figma" />
-								<Tag text="RESTful APIs" />
-								<Tag text="Postman" />
+								<Tag client:load text="Figma" variant="gray" />
+								<Tag client:load text="RESTful APIs" variant="gray" />
+								<Tag client:load text="Postman" variant="gray" />
 							</Bullets>
 							<Bullets 
 								title="Methodologies">
-								<Tag text="Design Thinking" />
-								<Tag text="Atomic Design" />
-								<Tag text="Mobile First" />
-								<Tag text="Agile" />
+								<Tag client:load text="Design Thinking" variant="gray" />
+								<Tag client:load text="Atomic Design" variant="gray" />
+								<Tag client:load text="Mobile First" variant="gray" />
+								<Tag client:load text="Agile" variant="gray" />
 							</Bullets>
 						</div>
 					</div>
 					<div class="flex flex-col gap-6">
 						<TitleSymbol>Soft skills</TitleSymbol>
 						<div class="flex flex-wrap gap-y-2">
-							<Tag text="Constantly changing" />
-							<Tag text="Self-taught" />
-							<Tag text="Problem solving" />
-							<Tag text="Teamwork" />
+							<Tag client:load text="Constantly changing" variant="gray" />
+							<Tag client:load text="Self-taught" variant="gray" />
+							<Tag client:load text="Problem solving" variant="gray" />
+							<Tag client:load text="Teamwork" variant="gray" />
 						</div>
 					</div>
 					<picture>
