@@ -3,17 +3,17 @@ import Header from "../layouts/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import ProjectButton from "../components/ProjectButton.astro";
 import ProjectContent from "../components/ProjectContent.astro";
-import Check from "../components/Check.astro";
 import SquareImage from "../components/SquareImage.astro";
 import TitleSymbol from "../components/TitleSymbol.astro";
 import Bullets from "../components/Bullets.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.tsx";
 import Tag from "../components/Tag.tsx";
 import ListItem from "../components/ListItem.tsx";
 import HighlightedTitle from "../components/HighlightedTitle";
 import H1 from "../components/H1.tsx";
 import H4 from "../components/H4.tsx";
 import TitleSection from "../components/TitleSection.tsx"
+import Check from "../components/Check.tsx";
 ---
 <Layout title="Mogami Porfolio" description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras.">
 	<Header>
@@ -103,14 +103,14 @@ import TitleSection from "../components/TitleSection.tsx"
 									desktopImgUrl="project01-image-desktop.jpg"
 									alt="user profile picture"/>
 								<div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
-									<Check>iOS17 - ScrollView new</Check>
-									<Check>SwiftData</Check>
-									<Check>Async Await</Check>
+									<Check text="iOS17 - ScrollView new"/>
+									<Check text="SwiftData"/>
+									<Check text="Async Await"/>
 								</div>
 								<div slot="buttons">
 									<Button
-									textButton="See the flow of dungeon"
-									linkProject="https://www.figma.com/proto/1P0S2xuMXPOnG1txYnEDmI/Dungeon-Crawl-DnD-App?node-id=593-5760&viewport=-1169%2C238%2C0.16&t=hSmtEpWWlch2yrjX-0&scaling=scale-down&starting-point-node-id=593%3A5760">
+									text="See the flow of dungeon"
+									link="https://www.figma.com/proto/1P0S2xuMXPOnG1txYnEDmI/Dungeon-Crawl-DnD-App?node-id=593-5760&viewport=-1169%2C238%2C0.16&t=hSmtEpWWlch2yrjX-0&scaling=scale-down&starting-point-node-id=593%3A5760">
 									<div slot="icon">
 										<img 
 											class="w-4 h-4" 
@@ -120,8 +120,8 @@ import TitleSection from "../components/TitleSection.tsx"
 									</div>
 									</Button>
 									<Button
-									textButton="Enter the dungeon"
-									linkProject="https://github.com/mogamiGit/Dungeon-Crawl">
+									text="Enter the dungeon"
+									link="https://github.com/mogamiGit/Dungeon-Crawl">
 									<div slot="icon">
 										<img 
 											class="w-4 h-4" 
@@ -175,13 +175,13 @@ import TitleSection from "../components/TitleSection.tsx"
 									desktopImgUrl="project02-image-desktop.jpg"
 									alt="user profile picture"/>
 								<div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
-									<Check>Lottie animation</Check>
-									<Check>Local management</Check>
+									<Check text="Lottie animation"/>
+									<Check text="Local management"/>
 								</div>
 								<div slot="buttons">
 									<Button
-									textButton="Start your Isekai Adventure"
-									linkProject="https://github.com/mogamiGit/Ohtaku">
+									text="Start your Isekai Adventure"
+									link="https://github.com/mogamiGit/Ohtaku">
 									<div slot="icon">
 										<img 
 											class="w-4 h-4" 
