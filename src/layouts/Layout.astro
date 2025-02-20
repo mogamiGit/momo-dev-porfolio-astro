@@ -1,28 +1,89 @@
 ---
-import Header from './Header.astro';
 interface Props {
-	title: string;
+  title: string;
+  description: string;
 }
 
 const { title } = Astro.props;
+const { description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@500;600&display=swap" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
-	<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalnia:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+
+  <style is:global>
+    @font-face {
+      font-family: "Hubot Sans";
+      src:
+        url("/fonts/Hubot-Sans.woff2") format("woff2 supports variations"),
+        url("/fonts/Hubot-Sans.woff2") format("woff2-variations");
+      font-weight: 200 900;
+      font-stretch: 75% 125%;
+    }
+
+    html {
+      font-family: "Hubot Sans", system-ui, sans-serif;
+      scroll-behavior: smooth;
+      animation: ease-in;
+      animation-duration: 1000ms;
+    }
+
+    html.dark {
+      background-color: #03001c;
+      color: #fff;
+    }
+
+    html.dark header {
+      background-image: linear-gradient(
+        to bottom,
+        rgba(3, 0, 28, 1),
+        transparent
+      );
+	box-shadow: 0 2px 40px rgba(74, 104, 240,0.4);
+    }
+
+    @media (max-width: 599px) {
+		html.dark header {
+		 	background: rgba(3, 0, 28, 0.8);
+		}
+	}
+
+    .dark .nav-links a {
+      color: #fff;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: medium;
+    }
+
+    section {
+      max-width: 1240px;
+      padding-bottom: 60px;
+    }
+  </style>
+
+  <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+  ></script>
 </html>
