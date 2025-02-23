@@ -18,11 +18,13 @@ export default {
 			'white': '#ffffff',
 			'blue-violet': '#4A68F0',
 			'yellow-chick': '#FFD121',
-			'dark-blue': '#222831',
+			'medium-blue': '#222831',
+			'dark-blue': '#03001c',
 		},
 	},
 	plugins: [
 		require('flowbite/plugin'),
-		require('tailwindcss-animated')
+		require('tailwindcss-animated'),
+		require('@tailwindcss/aspect-ratio')
 	],
 }
