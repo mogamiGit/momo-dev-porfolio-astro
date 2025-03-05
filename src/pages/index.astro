@@ -14,6 +14,8 @@ import H1 from "../components/H1.tsx";
 import H4 from "../components/H4.tsx";
 import TitleSection from "../components/TitleSection.tsx"
 import Check from "../components/Check.tsx";
+import SectionDescription from "../components/SectionDescription";
+import ContactForm from "../components/ContactForm"
 ---
 <Layout title="Mogami Porfolio" description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras.">
 	<Header>
@@ -314,6 +316,17 @@ import Check from "../components/Check.tsx";
 					<picture>
 						
 					</picture>
+				</div>
+			</section>
+			<section id="contact" class="w-full mx-auto" data-scroll="seccion4">
+				<TitleSection client:load text="break_the_ice" />
+				<div class="grid grid-cols-3">
+					<div class="col-span-2">
+						<ContactForm client:load />
+					</div>
+					<div>
+						<SectionDescription title="contact" description="mogami.creative@gmail.com" />
+					</div>
 				</div>
 			</section>
 		</div>
