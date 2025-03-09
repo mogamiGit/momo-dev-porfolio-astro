@@ -16,6 +16,7 @@ import TitleSection from "../components/TitleSection.tsx"
 import Check from "../components/Check.tsx";
 import SectionDescription from "../components/SectionDescription";
 import ContactForm from "../components/ContactForm"
+import GenericInput from "../components/Inputs/inputCustom.tsx";
 ---
 <Layout title="Mogami Porfolio" description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras.">
 	<Header>
@@ -254,7 +255,7 @@ import ContactForm from "../components/ContactForm"
 			<section id="about" class="w-full mx-auto  pt-20" data-scroll="seccion3">
 				<div class="flex flex-col lg:flex-row-reverse gap-10 items-center">
 					<img src="images/profile_photo.png" alt="profile image" class="max-w-80">
-					<div class="flex flex-col lg:flex-row gap-6">
+					<div class="flex flex-col lg:flex-row gap-10">
 						<div>
 							<TitleSection client:load text="about_me" />
 						</div>
@@ -318,14 +319,16 @@ import ContactForm from "../components/ContactForm"
 					</picture>
 				</div>
 			</section>
-			<section id="contact" class="w-full mx-auto" data-scroll="seccion4">
+			<section id="contact" class="w-full mx-auto flex flex-col gap-10" data-scroll="seccion4">
 				<TitleSection client:load text="break_the_ice" />
-				<div class="grid grid-cols-3">
+				<div class="grid grid-cols-3 gap-10">
 					<div class="col-span-2">
 						<ContactForm client:load />
 					</div>
-					<div>
+					<div class="flex flex-col gap-8">
 						<SectionDescription title="contact" description="mogami.creative@gmail.com" />
+						<div class="w-full flex flex-col gap-2">
+						<SectionDescription title="linkedin" description="monicagalandelallana" link="https://www.linkedin.com/in/monicagalandelallana" />
 					</div>
 				</div>
 			</section>
