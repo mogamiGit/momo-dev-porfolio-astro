@@ -2,22 +2,65 @@
 import Header from "../layouts/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import InfoDetail from "../components/DetailProject/InfoDetail";
+import CardTech from "../components/DetailProject/CardTech";
+import { link } from "motion/react-client";
 
 const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi tempus, porta diam bibendum, consectetur tortor. Mauris dictum dignissim cursus. Cras semper arcu id accumsan gravida. Nam lacinia orci sit amet lacus sodales varius. Morbi euismod tellus sit amet mauris viverra tempus. Sed gravida ligula ac odio efficitur fermentum. Maecenas posuere consequat neque at euismod. Donec semper commodo efficitur. Suspendisse ut malesuada nibh. Vestibulum cursus enim eget elementum pharetra.
 
-Aenean dignissim ipsum nisi, a tristique augue sagittis quis. Maecenas porttitor metus non cursus molestie. Nam ornare diam quam, in luctus magna bibendum eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin aliquet massa sem, eu efficitur diam dapibus in. In a ligula egestas, luctus libero a, mollis velit. Etiam volutpat orci a ornare dignissim. Nunc laoreet nec velit maximus suscipit. Phasellus mi nulla, varius vitae arcu sed, scelerisque vulputate neque. Nulla tincidunt hendrerit accumsan. Etiam iaculis odio ut tristique pulvinar. Aenean ullamcorper eros vitae augue tristique, vel dignissim lectus pharetra. Cras sollicitudin sem eu eros egestas, at congue ex convallis. Donec turpis sem, vestibulum a quam non, tincidunt fermentum nisi.`
+Aenean dignissim ipsum nisi, a tristique augue sagittis quis. Maecenas porttitor metus non cursus molestie. Nam ornare diam quam, in luctus magna bibendum eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin aliquet massa sem, eu efficitur diam dapibus in. In a ligula egestas, luctus libero a, mollis velit. Etiam volutpat orci a ornare dignissim. Nunc laoreet nec velit maximus suscipit. Phasellus mi nulla, varius vitae arcu sed, scelerisque vulputate neque. Nulla tincidunt hendrerit accumsan. Etiam iaculis odio ut tristique pulvinar. Aenean ullamcorper eros vitae augue tristique, vel dignissim lectus pharetra. Cras sollicitudin sem eu eros egestas, at congue ex convallis. Donec turpis sem, vestibulum a quam non, tincidunt fermentum nisi.`;
 
-const tags = ["React", "FrontEnd", "Storybook", "Tailwind"]
+const tags = ["React", "FrontEnd", "Storybook", "Tailwind"];
+const techs = [
+  {
+    title: "Desarrollo Web",
+    subtitle: "HTML, CSS, JavaScript",
+  },
+  {
+    title: "Diseño UI/UX",
+    subtitle: "Figma, Sketch, Adobe XD",
+  },
+  {
+    title: "Backend",
+    subtitle: "Node.js, Express, MongoDB",
+  },
+  {
+    title: "Backend",
+    subtitle: "Node.js, Express, MongoDB",
+  },
+];
+
+const button= {
+  link: "",
+  text: "Sample button"
+}
 ---
-<Layout title="Mogami Porfolio" description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras.">
-	<Header>
-		<a class="hover:font-bold duration-200" href="#projects">Projects</a>
-		<a class="hover:font-bold duration-200" href="#experience">Experience</a>
-		<a class="hover:font-bold duration-200" href="#about">About me</a>
-      </Header>
-	<main class="mt-20">
-            <section class="h-screen flex items-center mx-auto">
-				  <InfoDetail client:load year="2024" client="vndjnbkdjf" description={description} highlights={tags}  />
-            </section>
-      </main>
+
+<Layout
+  title="Mogami Porfolio"
+  description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras."
+>
+  <Header>
+    <a class="hover:font-bold duration-200" href="#projects">Projects</a>
+    <a class="hover:font-bold duration-200" href="#experience">Experience</a>
+    <a class="hover:font-bold duration-200" href="#about">About me</a>
+  </Header>
+  <main class="mt-20 mx-auto">
+    <section class="flex flex-col items-center">
+      <InfoDetail
+        client:load
+        year="2024"
+        client="vndjnbkdjf"
+        description={description}
+        highlights={tags}
+        button={button}
+      />
+    </section>
+    <section class="px-8 grid gap-4 grid-cols-2 lg:grid-cols-4">
+      {
+        techs.map((item) => (
+          <CardTech title={item.title} subtitle={item.subtitle} />
+        ))
+      }
+    </section>
+  </main>
 </Layout>
