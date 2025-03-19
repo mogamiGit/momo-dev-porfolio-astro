@@ -2,8 +2,8 @@
 import Header from "../layouts/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import InfoDetail from "../components/DetailProject/InfoDetail";
-import CardTech from "../components/DetailProject/CardTech";
-import { link } from "motion/react-client";
+import CardHighlight from "../components/DetailProject/CardHighlight";
+import ImageSlide from "../components/DetailProject/ImageSlide";
 
 const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi tempus, porta diam bibendum, consectetur tortor. Mauris dictum dignissim cursus. Cras semper arcu id accumsan gravida. Nam lacinia orci sit amet lacus sodales varius. Morbi euismod tellus sit amet mauris viverra tempus. Sed gravida ligula ac odio efficitur fermentum. Maecenas posuere consequat neque at euismod. Donec semper commodo efficitur. Suspendisse ut malesuada nibh. Vestibulum cursus enim eget elementum pharetra.
 
@@ -13,26 +13,31 @@ const tags = ["React", "FrontEnd", "Storybook", "Tailwind"];
 const techs = [
   {
     title: "Desarrollo Web",
-    subtitle: "HTML, CSS, JavaScript",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident mollitia dolor, unde rerum impedit repudiandae. Repellendus mollitia eligendi itaque atque fuga sint officia pariatur neque enim! Ad, fugit incidunt. Suscipit.",
+    emoji: "✏️",
   },
   {
     title: "Diseño UI/UX",
-    subtitle: "Figma, Sketch, Adobe XD",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident mollitia dolor, unde rerum impedit repudiandae. Repellendus mollitia eligendi itaque atque fuga sint officia pariatur neque enim! Ad, fugit incidunt. Suscipit.",
   },
   {
     title: "Backend",
-    subtitle: "Node.js, Express, MongoDB",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident mollitia dolor, unde rerum impedit repudiandae. Repellendus mollitia eligendi itaque atque fuga sint officia pariatur neque enim! Ad, fugit incidunt. Suscipit.",
   },
   {
     title: "Backend",
-    subtitle: "Node.js, Express, MongoDB",
+    subtitle:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident mollitia dolor, unde rerum impedit repudiandae. Repellendus mollitia eligendi itaque atque fuga sint officia pariatur neque enim! Ad, fugit incidunt. Suscipit.",
   },
 ];
 
-const button= {
+const button = {
   link: "",
-  text: "Sample button"
-}
+  text: "Sample button",
+};
 ---
 
 <Layout
@@ -58,9 +63,21 @@ const button= {
     <section class="px-8 grid gap-4 grid-cols-2 lg:grid-cols-4">
       {
         techs.map((item) => (
-          <CardTech title={item.title} subtitle={item.subtitle} />
+          <CardHighlight
+            title={item.title}
+            subtitle={item.subtitle}
+            emoji={item.emoji}
+            client:load
+          />
         ))
       }
+    </section>
+    <section>
+      <ImageSlide
+        title="Sample title"
+        description="xkjbnkjc dfnbjdfnb dfnbjkdf dfnjbd ngbjgnfj dgnjf dfnbfg bkjngbign kjf njg"
+        linkImage="https://placehold.co/600x400"
+      />
     </section>
   </main>
 </Layout>
