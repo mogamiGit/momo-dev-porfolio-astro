@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import ArrowLinkIcon from "../../../public/images/arrowIcon";
 
 type CardType = {
   url: string;
@@ -20,33 +21,49 @@ const HorizontalScrollCarousel: React.FC<Props> = ({ title, description, cards }
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-76%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
+  const blur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(10px)"]);
+
+  const opacity = useTransform(scrollYProgress, [0, 1], ["opacity(1)", "opacity(0)"]);
 
   return (
-    <div ref={targetRef} className="h-[300vh] w-screen bg-gray-100 dark:bg-black rounded-lg">
-      <div className="sticky top-0 flex h-screen items-center rounded p-4 ">
-        <motion.div style={{ x, transition: "transform 0.5s ease-out" }} className="flex gap-[200px] items-center">
-          <div className="h-full w-[400px] flex flex-col gap-5">
+    <div ref={targetRef} className="h-[300vh] w-screen bg-gradient-to-b from-gray-200 dark:from-blue-violet to-white dark:to-dark-blue">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <div className="flex gap-[7rem] md:gap-[8.5rem] items-center">
+          <motion.div
+            style={{ filter: blur }}
+            className="h-full w-screen md:w-[40rem] flex flex-col gap-5 px-8 lg:px-20"
+          >
             <p className="font-kalnia text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, saepe?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus, qui dolorum corrupti delectus fuga maxime obcaecati inventore animi, iste mollitia nesciunt vero soluta blanditiis esse at dolor? Repellat, modi.</p>
-          </div>
-          {cards.map((card) => {
-            return (
-              <motion.div
-                key={card.id}
-                className="w-[300px] h-[300px] bg-white rounded"
-                initial={{ scale: 1, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0)' }}
-                whileInView={{ scale: 1.3, boxShadow: '30px 30px 24px rgba(0, 0, 0, 0.1)' }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: false, amount: 0.9 }}
-              >
-                <img className="w-full h-full object-cover" src={card.url} alt={card.title} />
-              </motion.div>
-            );
-          })}
-        </motion.div>
+          </motion.div>
+          <motion.div style={{ x, transition: "transform 0.5s ease-out" }} className="flex gap-[7rem] md:gap-[8.5rem] items-center">
+            {cards.map((card) => {
+              return (
+                <motion.div
+                  key={card.id}
+                  className="w-[300px] h-[300px] bg-white rounded"
+                  initial={{ scale: 1, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0)' }}
+                  whileInView={{ scale: 1.3, boxShadow: '30px 30px 24px rgba(0, 0, 0, 0.1)' }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: false, amount: 0.9 }}
+                >
+                  <img className="w-full h-full object-cover" src={card.url} alt={card.title} />
+                </motion.div>
+              );
+            })}
+            <div className="flex-shrink-0 md:w-0 w-[12rem]" />
+          </motion.div>
+          <motion.div
+            style={{ filter: opacity }}
+            className="absolute bottom-0 p-8 w-full flex gap-2 items-center px-8 lg:px-20">
+            <p className="text-gray-500">Scroll down to see more</p>
+            <ArrowLinkIcon className="animate-pulse text-blue-violet" />
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </div >
   );
 };
 

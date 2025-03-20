@@ -16,11 +16,10 @@ const CardHighlight: React.FC<Props> = ({ title, subtitle, emoji, className }) =
 
   return (
     <motion.div
-      onClick={() => { setIsOpen(!isOpen); }}
+      onClick={() => setIsOpen(!isOpen)}
       className={containerClass}
-      layout
-      transition={{ layout: { duration: 1.2, type: "spring" } }}
-      style={{ height: isOpen ? "240px" : "70px" }}
+      animate={{ height: isOpen ? "240px" : "70px" }}
+      transition={{ height: { duration: 1.2, type: "spring" } }}
     >
       <motion.div className="group flex gap-2" layout="position">
         <motion.p className="text-xl font-semibold line-clamp-2">{title}</motion.p>
@@ -28,7 +27,7 @@ const CardHighlight: React.FC<Props> = ({ title, subtitle, emoji, className }) =
           className="text-xl"
           layout
           animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.5, type: "spring" }}
+          transition={{ duration: 0.5, type: "ease-out" }}
         >{emoji}</motion.p>
       </motion.div>
       {isOpen && (

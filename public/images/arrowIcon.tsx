@@ -9,7 +9,7 @@ export const ArrowLinkIcon: React.FC<Props> = ({
       className
 }) => {
       const iconClass = classNames(
-            'h-4 stroke-current fill-current',
+            'h-3 stroke-current fill-current',
             className,
       );
 

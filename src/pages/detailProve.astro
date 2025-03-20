@@ -41,27 +41,27 @@ const button = {
 
 const cards = [
   {
-    url: "/imgs/abstract/1.jpg",
+    url: "https://placehold.co/600x400",
     title: "Title 1",
     id: 1,
   },
   {
-    url: "/imgs/abstract/2.jpg",
+    url: "https://placehold.co/600x400",
     title: "Title 2",
     id: 2,
   },
   {
-    url: "/imgs/abstract/3.jpg",
+    url: "https://placehold.co/600x400",
     title: "Title 3",
     id: 3,
   },
   {
-    url: "/imgs/abstract/4.jpg",
+    url: "https://placehold.co/600x400",
     title: "Title 4",
     id: 4,
   },
   {
-    url: "/imgs/abstract/5.jpg",
+    url: "https://placehold.co/600x400",
     title: "Title 5",
     id: 5,
   },
@@ -77,8 +77,11 @@ const cards = [
     <a class="hover:font-bold duration-200" href="#experience">Experience</a>
     <a class="hover:font-bold duration-200" href="#about">About me</a>
   </Header>
-  <main class="mt-20 mx-auto">
-    <section>
+  <main class="mt-[6rem] w-full">
+    <div class="h-90 w-full bg-blue-violet">
+      <img src="https://placehold.co/600x400" alt="" class="object-cover" />
+    </div>
+    <section class="mx-auto flex flex-col gap-10 pt-16">
       <InfoDetail
         client:load
         year="2024"
@@ -87,21 +90,21 @@ const cards = [
         tags={tags}
         button={button}
       />
+      <div
+        class="px-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10"
+      >
+        {
+          techs.map((item) => (
+            <CardHighlight
+              title={item.title}
+              subtitle={item.subtitle}
+              emoji={item.emoji}
+              client:load
+            />
+          ))
+        }
+      </div>
     </section>
-    <section class="px-8 grid gap-4 grid-cols-2 lg:grid-cols-4 h-[300px]">
-      {
-        techs.map((item) => (
-          <CardHighlight
-            title={item.title}
-            subtitle={item.subtitle}
-            emoji={item.emoji}
-            client:load
-          />
-        ))
-      }
-    </section>
-    <section>
-      <HorizontalScrollCarousel cards={cards} client:load />
-    </section>
+    <HorizontalScrollCarousel cards={cards} client:load />
   </main>
 </Layout>
