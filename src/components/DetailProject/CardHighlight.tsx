@@ -1,19 +1,23 @@
 import { useState } from "react";
 import * as motion from "motion/react-client";
+import classNames from "classnames";
 
 interface Props {
   title: string;
   subtitle: string;
   emoji?: string;
+  className?: string;
 }
 
-const CardHighlight: React.FC<Props> = ({ title, subtitle, emoji }) => {
+const CardHighlight: React.FC<Props> = ({ title, subtitle, emoji, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const containerClass = classNames('rounded-md w-full flex flex-col justify-center bg-white dark:bg-dark-blue dark:drop-shadow-[0px_5px_10px_rgba(74,104,240,0.4)] drop-shadow-[0px_0px_10px_rgba(0,0,0,0.1)] p-6 cursor-pointer border dark:border-blue-violet border-gray-400', className)
 
   return (
     <motion.div
       onClick={() => { setIsOpen(!isOpen); }}
-      className="rounded-md w-full flex flex-col justify-center bg-white dark:bg-dark-blue dark:drop-shadow-[0px_5px_10px_rgba(74,104,240,0.4)] drop-shadow-[0px_0px_10px_rgba(0,0,0,0.1)] p-6 cursor-pointer border dark:border-blue-violet border-gray-400"
+      className={containerClass}
       layout
       transition={{ layout: { duration: 1.2, type: "spring" } }}
       style={{ height: isOpen ? "240px" : "70px" }}

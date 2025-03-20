@@ -3,7 +3,7 @@ import Header from "../layouts/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import InfoDetail from "../components/DetailProject/InfoDetail";
 import CardHighlight from "../components/DetailProject/CardHighlight";
-import ImageSlide from "../components/DetailProject/ImageSlide";
+import HorizontalScrollCarousel from "../components/DetailProject/HorizontalScrollCarousel";
 
 const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi tempus, porta diam bibendum, consectetur tortor. Mauris dictum dignissim cursus. Cras semper arcu id accumsan gravida. Nam lacinia orci sit amet lacus sodales varius. Morbi euismod tellus sit amet mauris viverra tempus. Sed gravida ligula ac odio efficitur fermentum. Maecenas posuere consequat neque at euismod. Donec semper commodo efficitur. Suspendisse ut malesuada nibh. Vestibulum cursus enim eget elementum pharetra.
 
@@ -38,6 +38,34 @@ const button = {
   link: "",
   text: "Sample button",
 };
+
+const cards = [
+  {
+    url: "/imgs/abstract/1.jpg",
+    title: "Title 1",
+    id: 1,
+  },
+  {
+    url: "/imgs/abstract/2.jpg",
+    title: "Title 2",
+    id: 2,
+  },
+  {
+    url: "/imgs/abstract/3.jpg",
+    title: "Title 3",
+    id: 3,
+  },
+  {
+    url: "/imgs/abstract/4.jpg",
+    title: "Title 4",
+    id: 4,
+  },
+  {
+    url: "/imgs/abstract/5.jpg",
+    title: "Title 5",
+    id: 5,
+  },
+];
 ---
 
 <Layout
@@ -50,17 +78,17 @@ const button = {
     <a class="hover:font-bold duration-200" href="#about">About me</a>
   </Header>
   <main class="mt-20 mx-auto">
-    <section class="flex flex-col items-center">
+    <section>
       <InfoDetail
         client:load
         year="2024"
         client="vndjnbkdjf"
         description={description}
-        highlights={tags}
+        tags={tags}
         button={button}
       />
     </section>
-    <section class="px-8 grid gap-4 grid-cols-2 lg:grid-cols-4">
+    <section class="px-8 grid gap-4 grid-cols-2 lg:grid-cols-4 h-[300px]">
       {
         techs.map((item) => (
           <CardHighlight
@@ -73,11 +101,7 @@ const button = {
       }
     </section>
     <section>
-      <ImageSlide
-        title="Sample title"
-        description="xkjbnkjc dfnbjdfnb dfnbjkdf dfnjbd ngbjgnfj dgnjf dfnbfg bkjngbign kjf njg"
-        linkImage="https://placehold.co/600x400"
-      />
+      <HorizontalScrollCarousel cards={cards} client:load />
     </section>
   </main>
 </Layout>
