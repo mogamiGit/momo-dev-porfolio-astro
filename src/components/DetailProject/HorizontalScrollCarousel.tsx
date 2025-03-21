@@ -36,14 +36,14 @@ const HorizontalScrollCarousel: React.FC<Props> = ({ title, description, cards }
             className="h-full w-screen md:w-[40rem] flex flex-col gap-5 px-8 lg:px-20"
           >
             <p className="font-kalnia text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, saepe?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus, qui dolorum corrupti delectus fuga maxime obcaecati inventore animi, iste mollitia nesciunt vero soluta blanditiis esse at dolor? Repellat, modi.</p>
+            <p className="text-gray-600 dark:text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus, qui dolorum corrupti delectus fuga maxime obcaecati inventore animi, iste mollitia nesciunt vero soluta blanditiis esse at dolor? Repellat, modi.</p>
           </motion.div>
           <motion.div style={{ x, transition: "transform 0.5s ease-out" }} className="flex gap-[7rem] md:gap-[8.5rem] items-center">
             {cards.map((card) => {
               return (
                 <motion.div
                   key={card.id}
-                  className="w-[300px] h-[300px] bg-white rounded"
+                  className="w-[300px] h-[300px] bg-white rounded overflow-hidden"
                   initial={{ scale: 1, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0)' }}
                   whileInView={{ scale: 1.3, boxShadow: '30px 30px 24px rgba(0, 0, 0, 0.1)' }}
                   transition={{ duration: 0.6 }}
@@ -58,8 +58,8 @@ const HorizontalScrollCarousel: React.FC<Props> = ({ title, description, cards }
           <motion.div
             style={{ filter: opacity }}
             className="absolute bottom-0 p-8 w-full flex gap-2 items-center px-8 lg:px-20">
-            <p className="text-gray-500">Scroll down to see more</p>
-            <ArrowLinkIcon className="animate-pulse text-blue-violet" />
+            <p className="text-gray-500 dark:text-gray-200">Scroll down to see more</p>
+            <ArrowLinkIcon className="animate-pulse text-blue-violet dark:text-white" />
           </motion.div>
         </div>
       </div>

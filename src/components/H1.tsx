@@ -1,16 +1,17 @@
 import React from 'react';
+import classNames from "classnames";
 import * as motion from "motion/react-client";
 
 interface Props {
       text: string;
-      id?: string;
+      className?: string;
 }
 
-const H1: React.FC<Props> = ({ text }) => {
-      const titleClass ="font-kalnia text-6xl md:text-5xl lg:text-6xl"
+const H1: React.FC<Props> = ({ text, className }) => {
+      const titleClass = classNames( "font-kalnia text-6xl md:text-5xl lg:text-6xl", className)
 
       return (
-            <motion.h1 
+            <motion.h1
                   className={titleClass}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}

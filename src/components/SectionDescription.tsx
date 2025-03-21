@@ -8,9 +8,10 @@ interface Props {
       description?: string;
       tags?: string[];
       link?: string;
+      className?: string;
 }
 
-const sectionDescription: React.FC<Props> = ({ title, description, tags = [], link }) => {
+const sectionDescription: React.FC<Props> = ({ title, description, tags = [], link, className }) => {
       const titleClass = classNames('font-kalnia text-sm text-gray-500 capitalize');
       const containerClass = classNames('w-full flex flex-col',
             {
@@ -32,7 +33,7 @@ const sectionDescription: React.FC<Props> = ({ title, description, tags = [], li
                                           </div>
                                     </a>
                               ) : (
-                                    <p className="whitespace-pre-line">{description}</p>
+                                    <p className={`whitespace-pre-line ${className}`}>{description}</p>
                               ))}
                   </div>
                   {tags &&
