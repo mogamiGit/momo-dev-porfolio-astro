@@ -34,7 +34,7 @@ const ChallengeSolutions: React.FC<Props> = () => {
           text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, molestiae. Repudiandae nostrum veritatis voluptatibus, excepturi enim accusantium natus porro dolor."
           sign="?"
         />
-        <div className="h-12 md:w-12 md:h-0 border-r-2 border-b-0 md:border-b-2 md:border-r-0 border-blue-violet animate-pulse"></div>
+        <div className="h-12 md:w-12 md:h-0 border-r-2 border-b-0 border-dashed md:border-b-2 md:border-r-0 border-blue-violet animate-pulse"></div>
       </div>
       <IconCard
         text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, molestiae. Repudiandae nostrum veritatis voluptatibus, excepturi enim accusantium natus porro dolor. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, molestiae. Repudiandae nostrum veritatis voluptatibus, excepturi enim accusantium natus porro dolor."

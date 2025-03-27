@@ -25,10 +25,10 @@ const InfoDetail: React.FC<Props> = ({ year, client, description, tags, button }
       <div className="flex flex-col gap-10 col-span-1 md:col-span-2">
         <SectionDescription title="year" description={year} className="font-semibold" />
         {client && <SectionDescription title="client" description={client} />}
-        <SectionDescription title="description" description={description} />
+        <SectionDescription title="description" className="leading-9" description={description} />
       </div>
       <div className="flex flex-col gap-16 md:gap-20">
-        <SectionDescription title="highlights" tags={tags} />
+        <SectionDescription title="technologies" tags={tags} />
         {button &&
           <a href={button.link} target="_blank">
             <motion.button

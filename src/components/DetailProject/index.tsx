@@ -4,6 +4,7 @@ import DropdownCard from "./DropdownCard";
 import HorizontalScrollCarousel from "./HorizontalScrollCarousel";
 import InfoDetail from "./InfoDetail";
 import * as motion from "motion/react-client";
+import TitleSection from "../TitleSection";
 
 type Button = {
   link: string;
@@ -31,20 +32,22 @@ type CardType = {
 };
 
 interface Props {
+  title: string;
+  linkImage: string;
   infoDetail: infoDetail;
   dropdownCards: DropdownCard[];
   cards: CardType[];
   children?: React.ReactNode;
 }
 
-const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards, ...rest }) => {
+const DetailProject: React.FC<Props> = ({ title, linkImage, infoDetail, dropdownCards, cards, ...rest }) => {
   return (
     <Fragment>
       <section className="grid grid-cols-2 w-full mx-auto gap-6 items-center p-8">
         <div>
           <H1
             className="line-clamp-5"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, omnis?"
+            text={title}
           />
         </div>
         <motion.div
@@ -53,13 +56,13 @@ const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards, ...r
           transition={{ delay: 0.6, duration: 0.5, type: "ease-out" }}
         >
           <img
-            src="https://placehold.co/600x400"
-            alt=""
+            src={linkImage}
+            alt={`header image del proyecto: ${title}`}
             className="w-full h-full object-cover"
           />
         </motion.div>
       </section>
-      <section className="mx-auto flex flex-col gap-16 pt-16  mb-16">
+      <section className="mx-auto flex flex-col gap-16 pt-16  mb-6">
         <InfoDetail
           year={infoDetail.year}
           client={infoDetail.client}
@@ -67,20 +70,23 @@ const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards, ...r
           tags={infoDetail.tags}
           button={infoDetail.button}
         />
-        <div
-          className="px-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-        >
-          {
-            dropdownCards.map((item) => (
-              <DropdownCard
-                title={item.title}
-                subtitle={item.subtitle}
-                emoji={item.emoji}
-              />
-            ))
-          }
+        <div className="flex flex-col gap-8 px-8 ">
+          <TitleSection text="highlights" />
+          <div
+            className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          >
+            {
+              dropdownCards.map((item) => (
+                <DropdownCard
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  emoji={item.emoji}
+                />
+              ))
+            }
+          </div>
         </div>
-        <div  className="px-8">
+        <div className="px-8">
           {rest.children}
         </div>
       </section>
