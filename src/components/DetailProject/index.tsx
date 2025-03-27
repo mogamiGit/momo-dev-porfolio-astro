@@ -1,10 +1,9 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import H1 from "../H1";
 import DropdownCard from "./DropdownCard";
 import HorizontalScrollCarousel from "./HorizontalScrollCarousel";
 import InfoDetail from "./InfoDetail";
 import * as motion from "motion/react-client";
-
 
 type Button = {
   link: string;
@@ -35,9 +34,10 @@ interface Props {
   infoDetail: infoDetail;
   dropdownCards: DropdownCard[];
   cards: CardType[];
+  children?: React.ReactNode;
 }
 
-const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards }) => {
+const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards, ...rest }) => {
   return (
     <Fragment>
       <section className="grid grid-cols-2 w-full mx-auto gap-6 items-center p-8">
@@ -59,7 +59,7 @@ const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards }) =>
           />
         </motion.div>
       </section>
-      <section className="mx-auto flex flex-col gap-16 pt-16">
+      <section className="mx-auto flex flex-col gap-16 pt-16  mb-16">
         <InfoDetail
           year={infoDetail.year}
           client={infoDetail.client}
@@ -68,7 +68,7 @@ const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards }) =>
           button={infoDetail.button}
         />
         <div
-          className="px-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-16"
+          className="px-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
         >
           {
             dropdownCards.map((item) => (
@@ -79,6 +79,9 @@ const DetailProject: React.FC<Props> = ({ infoDetail, dropdownCards, cards }) =>
               />
             ))
           }
+        </div>
+        <div  className="px-8">
+          {rest.children}
         </div>
       </section>
       <HorizontalScrollCarousel cards={cards} />
