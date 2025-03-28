@@ -7,7 +7,7 @@ interface Props {
 const check: React.FC<Props> = ({ text }) => {
     return (
         <div>
-            <div className="flex item-center pb-2">
+            <div className="flex items-center pb-2">
                 <img
                     className="w-6 h-6"
                     src="images/check-vector.svg"
