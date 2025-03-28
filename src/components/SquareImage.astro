@@ -3,30 +3,30 @@ import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 
 interface Props {
-    mobileImgUrl: string | ImageMetadata;
-    desktopImgUrl: string | ImageMetadata;
-    alt: string;
+  mobileImgUrl: string | ImageMetadata;
+  desktopImgUrl: string | ImageMetadata;
+  alt: string;
 }
 
 const { mobileImgUrl, desktopImgUrl, alt } = Astro.props;
 
 const mobileImg = await getImage({
-    src: "/images/" + mobileImgUrl,
-    format: "webp",
-    width: 300,
-    height: 300,
+  src: "/images/projects/" + mobileImgUrl,
+  format: "webp",
+  width: 300,
+  height: 300,
 });
 
 const desktopImg = await getImage({
-    src: "/images/" + desktopImgUrl,
-    format: "webp",
-    width: 600,
-    height: 400,
+  src: "/images/projects/" + desktopImgUrl,
+  format: "webp",
+  width: 600,
+  height: 400,
 });
 ---
 
 <picture class="m-0 p-0 w-full flex md:justify-start justify-center">
-    <source media="(max-width: 799px)" srcset={mobileImg.src} />
-    <source media="(min-width: 800px)" srcset={desktopImg.src} />
-    <img src={desktopImg.src} alt={alt} />
+  <source media="(max-width: 799px)" srcset={mobileImg.src} />
+  <source media="(min-width: 800px)" srcset={desktopImg.src} />
+  <img src={desktopImg.src} alt={alt} />
 </picture>
