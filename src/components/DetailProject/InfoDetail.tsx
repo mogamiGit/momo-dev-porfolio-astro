@@ -38,7 +38,7 @@ const InfoDetail: React.FC<Props> = ({ year, client, description, tags, button }
               transition={{ scale: { type: "spring", bounce: 0.4, duration: 0.7 } }}
               viewport={{ once: true, amount: 0.5 }}
             >
-              {button.text} <ArrowDiagonalIcon className="group-hover:text-blue-violet" />
+              {button.text} <ArrowDiagonalIcon className="group-hover:text-blue-violet scale-90 group-hover:scale-110 ease-out duration-150" />
             </motion.button>
           </a>
         }

@@ -33,7 +33,7 @@ const sectionDescription: React.FC<Props> = ({ title, description, tags = [], li
               </div>
             </a>
           ) : (
-            <p className={`whitespace-pre-line ${className}`}>{description}</p>
+            <p className={`whitespace-pre-line ${className}`}><span dangerouslySetInnerHTML={{ __html: description }} /></p>
           ))}
       </div>
       {tags &&

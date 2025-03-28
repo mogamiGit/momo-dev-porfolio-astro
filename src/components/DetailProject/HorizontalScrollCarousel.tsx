@@ -28,22 +28,22 @@ const HorizontalScrollCarousel: React.FC<Props> = ({ title, description, cards }
   const opacity = useTransform(scrollYProgress, [0, 1], ["opacity(1)", "opacity(0)"]);
 
   return (
-    <div ref={targetRef} className="h-[300vh] w-screen bg-gradient-to-b from-gray-200 dark:from-blue-violet to-white dark:to-dark-blue">
+    <div ref={targetRef} className="h-[300vh] w-screen bg-gradient-to-b from-gray-300 dark:from-blue-violet to-white dark:to-dark-blue">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <div className="flex gap-[7rem] md:gap-[8.5rem] items-center">
           <motion.div
             style={{ filter: blur }}
             className="h-full w-screen md:w-[40rem] flex flex-col gap-5 px-8 lg:px-20"
           >
-            <p className="font-kalnia text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, saepe?</p>
-            <p className="text-gray-600 dark:text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus, qui dolorum corrupti delectus fuga maxime obcaecati inventore animi, iste mollitia nesciunt vero soluta blanditiis esse at dolor? Repellat, modi.</p>
+            <p className="font-kalnia text-4xl">{title}</p>
+            <p className="text-gray-600 dark:text-gray-200"><span dangerouslySetInnerHTML={{ __html: description }} /></p>
           </motion.div>
           <motion.div style={{ x, transition: "transform 0.5s ease-out" }} className="flex gap-[7rem] md:gap-[8.5rem] items-center">
             {cards.map((card) => {
               return (
                 <motion.div
                   key={card.id}
-                  className="w-[300px] h-[300px] bg-white rounded overflow-hidden"
+                  className="w-[20rem] h-[25rem] md:w-[25rem] lg:w-[35rem] bg-white rounded-lg overflow-hidden"
                   initial={{ scale: 1, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0)' }}
                   whileInView={{ scale: 1.3, boxShadow: '30px 30px 24px rgba(0, 0, 0, 0.1)' }}
                   transition={{ duration: 0.6 }}
