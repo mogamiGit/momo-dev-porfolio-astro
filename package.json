@@ -34,6 +34,7 @@
     "ws": "^8.17.1"
   },
   "devDependencies": {
-    "@rollup/plugin-inject": "^5.0.5"
+    "@rollup/plugin-inject": "^5.0.5",
+    "cursor-cli": "^1.0.0"
   }
 }
