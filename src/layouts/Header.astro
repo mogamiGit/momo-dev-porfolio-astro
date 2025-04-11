@@ -46,17 +46,21 @@ import ThemeIcon from "../components/ThemeIcon.astro";
     cursor: pointer;
     padding: 10px 16px;
   }
-  
-	header {
-		background-image: linear-gradient(to bottom, rgb(255, 255, 255,1), transparent);
-		box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
-	}
+
+  header {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255, 1),
+      transparent
+    );
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+  }
 
   @media (max-width: 599px) {
-		header {
-			background: rgba(255, 255, 255, 0.7);
-		}
-	}
+    header {
+      background: rgba(255, 255, 255, 0.7);
+    }
+  }
 
   @media (max-width: 1280px) {
     .menu {
@@ -124,11 +128,11 @@ import ThemeIcon from "../components/ThemeIcon.astro";
     }
   });
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY === 0) {
-      header.classList.remove('bg-opacity-80');
+      header.classList.remove("bg-opacity-80");
     } else {
-      header.classList.add('bg-opacity-80');
+      header.classList.add("bg-opacity-80");
     }
   });
 </script>
