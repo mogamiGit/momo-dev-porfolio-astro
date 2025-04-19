@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import Tag from "./Tag";
-import ArrowDiagonalIcon from "../../public/images/arrowDiagonalIcon";
+import Tag from "../atoms/Tag";
+import ArrowDiagonalIcon from "../../../public/images/arrowDiagonalIcon";
 
 interface Props {
   title: string;

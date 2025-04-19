@@ -1,7 +1,7 @@
 import React from "react";
-import SectionDescription from "../SectionDescription";
-import Button from "../Button";
-import ArrowDiagonalIcon from "../../../public/images/arrowDiagonalIcon";
+import SectionDescription from "../../molecules/SectionDescription";
+import Button from "../../atoms/Button";
+import ArrowDiagonalIcon from "../../../../public/images/arrowDiagonalIcon";
 import * as motion from "motion/react-client";
 
 interface Button {

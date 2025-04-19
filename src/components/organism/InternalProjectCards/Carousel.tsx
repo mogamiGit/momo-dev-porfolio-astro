@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CardProject from './CardProject.tsx';
 import { motion } from "motion/react";
-import ArrowIcon from "../../../public/images/arrowIcon.tsx";
+import ArrowIcon from "../../../../public/images/arrowIcon.tsx";
 
 interface Button {
       text: string;

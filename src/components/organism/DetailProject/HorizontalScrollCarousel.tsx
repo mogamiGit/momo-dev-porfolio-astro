@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import ArrowLinkIcon from "../../../public/images/arrowIcon";
+import ArrowLinkIcon from "../../../../public/images/arrowIcon.tsx";
 
 type CardType = {
   url: string;

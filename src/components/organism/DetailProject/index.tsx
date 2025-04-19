@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import H1 from "../H1";
+import H1 from "../../atoms/H1";
 import DropdownCard from "./DropdownCard";
 import HorizontalScrollCarousel from "./HorizontalScrollCarousel";
 import InfoDetail from "./InfoDetail";
 import * as motion from "motion/react-client";
-import TitleSection from "../TitleSection";
+import TitleSection from "../../atoms/TitleSection";
 
 type Button = {
   link: string;
