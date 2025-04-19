@@ -1,8 +1,7 @@
 import { useState } from "react";
 import * as motion from "motion/react-client";
 import classNames from "classnames";
-import ArrowDiagonalIcon from "../../../public/images/arrowDiagonalIcon";
-import ArrowLinkIcon from "../../../public/images/arrowIcon";
+import ArrowLinkIcon from "../../../../public/images/arrowIcon";
 
 interface Props {
   title: string;
