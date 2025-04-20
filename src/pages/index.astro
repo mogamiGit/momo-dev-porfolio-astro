@@ -16,6 +16,7 @@ import TitleSection from "../components/atoms/TitleSection.tsx";
 import Check from "../components/atoms/Check.tsx";
 import SectionDescription from "../components/molecules/SectionDescription.tsx";
 import ContactForm from "../components/organism/ContactForm.tsx";
+import AccordionItem from "../components/organism/AccordionItem";
 ---
 
 <Layout
@@ -102,216 +103,87 @@ import ContactForm from "../components/organism/ContactForm.tsx";
         data-scroll="seccion1"
       >
         <TitleSection client:load text="projects" />
-        <div
-          id="accordion-flush"
-          data-accordion="collapse"
-          data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-          data-inactive-classes="text-gray-500 dark:text-gray-400"
+        <AccordionItem
+          client:load
+          name="Dynamic Knowledge Hub"
+          highlight="React · Storybook"
+          synopsis="Escohotado Web"
+          description="This website will serve as the official central hub for the community of philosopher and thinker Escohotado."
+          mobileImgUrl="escohotado/project03-image-mobile.jpg"
+          desktopImgUrl="escohotado/project03-image-desktop.jpg"
+          alt="Collage photos of screens of Escohotado Project"
+          checkItems={["React", "Storybook", "Motion.dev"]}
         >
-          <h2 id="accordion-flush-heading-1">
-            <button
-              type="button"
-              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
-              data-accordion-target="#accordion-flush-body-1"
-              aria-expanded="false"
-              aria-controls="accordion-flush-body-1"
-            >
-              <ProjectButton
-                name="Dynamic Knowledge Hub"
-                highlight="React · Storybook"
+          <Button text="Go to Detail project" link="/projectCommunity">
+            <div slot="icon">
+              <img
+                class="w-4 h-4"
+                src="images/code-analysis.svg"
+                alt="magnifying glass code icon"
               />
-              <svg
-                data-accordion-icon
-                class="w-3 h-3 rotate-180 shrink-0 mr-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5 5 1 1 5"></path>
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="accordion-flush-body-1"
-            class="hidden"
-            aria-labelledby="accordion-flush-heading-1"
-          >
-            <div class="border-b-2 border-gray-700">
-              <ProjectContent
-                synopsis="Escohotado Web"
-                description="This website will serve as the official central hub for the community of philosopher and thinker Escohotado."
-              >
-                <SquareImage
-                  slot="picture"
-                  mobileImgUrl="escohotado/project03-image-mobile.jpg"
-                  desktopImgUrl="escohotado/project03-image-desktop.jpg"
-                  alt="user profile picture"
-                />
-                <div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
-                  <Check text="React" />
-                  <Check text="Storybook" />
-                  <Check text="Motion.dev" />
-                </div>
-                <div slot="buttons">
-                  <Button text="Go to Detail project" link="/projectCommunity">
-                    <div slot="icon">
-                      <img
-                        class="w-4 h-4"
-                        src="images/code-analysis.svg"
-                        alt="magnifying glass code icon"
-                      />
-                    </div>
-                  </Button>
-                </div>
-              </ProjectContent>
             </div>
-          </div>
-          <h2 id="accordion-flush-heading-2">
-            <button
-              type="button"
-              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
-              data-accordion-target="#accordion-flush-body-2"
-              aria-expanded="false"
-              aria-controls="accordion-flush-body-2"
-            >
-              <ProjectButton name="Dungeon Crawl" highlight="iOS 17" />
-              <svg
-                data-accordion-icon
-                class="w-3 h-3 rotate-180 shrink-0 mr-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5 5 1 1 5"></path>
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="accordion-flush-body-2"
-            class="hidden"
-            aria-labelledby="accordion-flush-heading-2"
+          </Button>
+        </AccordionItem>
+        <AccordionItem
+          client:load
+          name="Dungeon Crawl"
+          highlight="iOS 17"
+          synopsis="Data Management App"
+          description="Empowers Dungeon Masters (DMs) to effortlessly manage their parties and access crucial Dungeons & Dragons data, streamlining the game experience"
+          mobileImgUrl="project01-image-mobile.jpg"
+          desktopImgUrl="project01-image-desktop.jpg"
+          alt="user profile picture"
+          checkItems={["iOS17 - ScrollView new", "SwiftData", "Async Await"]}
+        >
+          <Button
+            text="See the flow of dungeon"
+            link="https://www.figma.com/proto/1P0S2xuMXPOnG1txYnEDmI/Dungeon-Crawl-DnD-App?node-id=593-5760&viewport=-1169%2C238%2C0.16&t=hSmtEpWWlch2yrjX-0&scaling=scale-down&starting-point-node-id=593%3A5760"
           >
-            <div class="border-b-2 border-gray-700">
-              <ProjectContent
-                synopsis="Data Management App"
-                description="Empowers Dungeon Masters (DMs) to effortlessly manage their parties and access crucial Dungeons & Dragons data, streamlining the game experience"
-              >
-                <SquareImage
-                  slot="picture"
-                  mobileImgUrl="project01-image-mobile.jpg"
-                  desktopImgUrl="project01-image-desktop.jpg"
-                  alt="user profile picture"
-                />
-                <div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
-                  <Check text="iOS17 - ScrollView new" />
-                  <Check text="SwiftData" />
-                  <Check text="Async Await" />
-                </div>
-                <div slot="buttons">
-                  <Button
-                    text="See the flow of dungeon"
-                    link="https://www.figma.com/proto/1P0S2xuMXPOnG1txYnEDmI/Dungeon-Crawl-DnD-App?node-id=593-5760&viewport=-1169%2C238%2C0.16&t=hSmtEpWWlch2yrjX-0&scaling=scale-down&starting-point-node-id=593%3A5760"
-                  >
-                    <div slot="icon">
-                      <img
-                        class="w-4 h-4"
-                        src="images/figma-icon.svg"
-                        alt="figma icon"
-                      />
-                    </div>
-                  </Button>
-                  <Button
-                    text="Enter the dungeon"
-                    link="https://github.com/mogamiGit/Dungeon-Crawl"
-                  >
-                    <div slot="icon">
-                      <img
-                        class="w-4 h-4"
-                        src="images/github-icon.svg"
-                        alt="github icon"
-                      />
-                    </div>
-                  </Button>
-                </div>
-              </ProjectContent>
+            <div slot="icon">
+              <img
+                class="w-4 h-4"
+                src="images/figma-icon.svg"
+                alt="figma icon"
+              />
             </div>
-          </div>
-          <h2 id="accordion-flush-heading-3">
-            <button
-              type="button"
-              class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
-              data-accordion-target="#accordion-flush-body-3"
-              aria-expanded="false"
-              aria-controls="accordion-flush-body-3"
-            >
-              <ProjectButton name="OhTaku!" highlight="iOS 16" />
-              <svg
-                data-accordion-icon
-                class="w-3 h-3 rotate-180 shrink-0 mr-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5 5 1 1 5"></path>
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="accordion-flush-body-3"
-            class="hidden"
-            aria-labelledby="accordion-flush-heading-3"
+          </Button>
+          <Button
+            text="Enter the dungeon"
+            link="https://github.com/mogamiGit/Dungeon-Crawl"
           >
-            <div class="border-b-2 border-gray-700">
-              <ProjectContent
-                synopsis="Tracker App"
-                description="Discover and track your favorite anime. Dive into a vast database of titles, consult detailed information, and effortlessly track your progress with a tap."
-              >
-                <SquareImage
-                  slot="picture"
-                  mobileImgUrl="project02-image-mobile.jpg"
-                  desktopImgUrl="project02-image-desktop.jpg"
-                  alt="user profile picture"
-                />
-                <div slot="check" class="flex gap-x-5 pb-6 flex-wrap">
-                  <Check text="Lottie animation" />
-                  <Check text="Local management" />
-                </div>
-                <div slot="buttons">
-                  <Button
-                    text="Start your Isekai Adventure"
-                    link="https://github.com/mogamiGit/Ohtaku"
-                  >
-                    <div slot="icon">
-                      <img
-                        class="w-4 h-4"
-                        src="images/github-icon.svg"
-                        alt="github icon"
-                      />
-                    </div>
-                  </Button>
-                </div>
-              </ProjectContent>
+            <div slot="icon">
+              <img
+                class="w-4 h-4"
+                src="images/github-icon.svg"
+                alt="github icon"
+              />
             </div>
-          </div>
-        </div>
+          </Button>
+        </AccordionItem>
+        <AccordionItem
+          client:load
+          name="OhTaku!"
+          highlight="iOS 16"
+          synopsis="Tracker App"
+          description="Discover and track your favorite anime. Dive into a vast database of titles, consult detailed information, and effortlessly track your progress with a tap."
+          mobileImgUrl="project02-image-mobile.jpg"
+          desktopImgUrl="project02-image-desktop.jpg"
+          alt="user profile picture"
+          checkItems={["Lottie animation", "Local management"]}
+        >
+          <Button
+            text="Start your Isekai Adventure"
+            link="https://github.com/mogamiGit/Ohtaku"
+          >
+            <div slot="icon">
+              <img
+                class="w-4 h-4"
+                src="images/github-icon.svg"
+                alt="github icon"
+              />
+            </div>
+          </Button>
+        </AccordionItem>
       </section>
       <section
         id="experience"
