@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import InputCustom from '../Inputs/inputCustom'
-import TextAreaCustom from '../Inputs/textAreaCustom'
+import InputCustom from '../atoms/Inputs/inputCustom'
+import TextAreaCustom from '../atoms/Inputs/textAreaCustom'
 import Button from '../atoms/Button';
 
 const ContactForm: React.FC = () => {
