@@ -1,17 +1,12 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import ArrowLinkIcon from "../../../../public/images/arrowIcon.tsx";
-
-type CardType = {
-  url: string;
-  title: string;
-  id: number;
-};
+import type { CardData } from "./types.ts";
 
 interface Props {
   title?: string;
   description?: string;
-  cards: CardType[];
+  cards: CardData[];
 }
 
 const HorizontalScrollCarousel: React.FC<Props> = ({ title, description, cards }) => {

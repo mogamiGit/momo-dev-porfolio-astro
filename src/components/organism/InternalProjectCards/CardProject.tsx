@@ -15,7 +15,6 @@ interface Props {
 }
 
 const cardProject: React.FC<Props> = ({ title, description, buttons = [], checks = [], ...rest }) => {
-
   return (
     <div
       className={

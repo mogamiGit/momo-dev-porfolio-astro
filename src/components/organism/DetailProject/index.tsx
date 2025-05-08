@@ -5,44 +5,14 @@ import HorizontalScrollCarousel from "./HorizontalScrollCarousel";
 import InfoDetail from "./InfoDetail";
 import * as motion from "motion/react-client";
 import TitleSection from "../../atoms/TitleSection";
-
-type Button = {
-  link: string;
-  text: string;
-}
-
-type infoDetail = {
-  year: string;
-  client: string;
-  description: string;
-  tags: string[];
-  button: Button;
-}
-
-type DropdownCard = {
-  title: string;
-  description: string;
-  emoji: string;
-}
-
-type CardType = {
-  url: string;
-  title: string;
-  id: number;
-};
-
-type HorizontalScrollCarousel = {
-  title: string;
-  description: string;
-  cards: CardType[];
-}
+import type { infoDetailData, DropdownCardData, HorizontalScrollCarouselData } from "./types"
 
 interface Props {
   title: string;
   linkImage: string;
-  infoDetail: infoDetail;
-  dropdownCards: DropdownCard[];
-  horizontalScrollCarousel: HorizontalScrollCarousel;
+  infoDetail: infoDetailData;
+  dropdownCards: DropdownCardData[];
+  horizontalScrollCarousel: HorizontalScrollCarouselData;
   children?: React.ReactNode;
 }
 

@@ -1,9 +1,6 @@
 ---
 import Header from "../components/organism/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import ProjectButton from "../components/organism/ProjectButton.astro";
-import ProjectContent from "../components/organism/ProjectContent.astro";
-import SquareImage from "../components/atoms/SquareImage.astro";
 import TitleSymbol from "../components/atoms/TitleSymbol.astro";
 import Bullets from "../components/atoms/Bullets.astro";
 import Button from "../components/atoms/Button.tsx";
@@ -16,6 +13,7 @@ import TitleSection from "../components/atoms/TitleSection.tsx";
 import SectionDescription from "../components/molecules/SectionDescription.tsx";
 import ContactForm from "../components/organism/ContactForm.tsx";
 import AccordionItem from "../components/organism/AccordionItem";
+import { projects } from "../data/allProjectsData";
 ---
 
 <Layout
@@ -95,94 +93,44 @@ import AccordionItem from "../components/organism/AccordionItem";
         subtitle="Design passionate"
       />
     </section>
-    <div class="flex flex-col px-8">
+    <div class="flex flex-col px-4">
       <section
         id="projects"
         class="w-full mx-auto pt-20"
         data-scroll="seccion1"
       >
         <TitleSection client:load text="projects" />
-        <AccordionItem
-          client:load
-          name="Dynamic Knowledge Hub"
-          highlight="React · Storybook"
-          synopsis="Escohotado Web"
-          description="This website will serve as the official central hub for the community of philosopher and thinker Escohotado."
-          mobileImgUrl="escohotado/project03-image-mobile.jpg"
-          desktopImgUrl="escohotado/project03-image-desktop.jpg"
-          alt="Collage photos of screens of Escohotado Project"
-          checkItems={["React", "Storybook", "Motion.dev"]}
-        >
-          <Button text="Go to Detail project" link="/projectCommunity">
-            <div slot="icon">
-              <img
-                class="w-4 h-4"
-                src="images/code-analysis.svg"
-                alt="magnifying glass code icon"
-              />
-            </div>
-          </Button>
-        </AccordionItem>
-        <AccordionItem
-          client:load
-          name="Dungeon Crawl"
-          highlight="iOS 17"
-          synopsis="Data Management App"
-          description="Empowers Dungeon Masters (DMs) to effortlessly manage their parties and access crucial Dungeons & Dragons data, streamlining the game experience"
-          mobileImgUrl="project01-image-mobile.jpg"
-          desktopImgUrl="project01-image-desktop.jpg"
-          alt="user profile picture"
-          checkItems={["iOS17 - ScrollView new", "SwiftData", "Async Await"]}
-        >
-          <Button
-            text="See the flow of dungeon"
-            link="https://www.figma.com/proto/1P0S2xuMXPOnG1txYnEDmI/Dungeon-Crawl-DnD-App?node-id=593-5760&viewport=-1169%2C238%2C0.16&t=hSmtEpWWlch2yrjX-0&scaling=scale-down&starting-point-node-id=593%3A5760"
-          >
-            <div slot="icon">
-              <img
-                class="w-4 h-4"
-                src="images/figma-icon.svg"
-                alt="figma icon"
-              />
-            </div>
-          </Button>
-          <Button
-            text="Enter the dungeon"
-            link="https://github.com/mogamiGit/Dungeon-Crawl"
-          >
-            <div slot="icon">
-              <img
-                class="w-4 h-4"
-                src="images/github-icon.svg"
-                alt="github icon"
-              />
-            </div>
-          </Button>
-        </AccordionItem>
-        <AccordionItem
-          client:load
-          name="OhTaku!"
-          highlight="iOS 16"
-          synopsis="Tracker App"
-          description="Discover and track your favorite anime. Dive into a vast database of titles, consult detailed information, and effortlessly track your progress with a tap."
-          mobileImgUrl="project02-image-mobile.jpg"
-          desktopImgUrl="project02-image-desktop.jpg"
-          alt="user profile picture"
-          checkItems={["Lottie animation", "Local management"]}
-        >
-          <Button
-            text="Start your Isekai Adventure"
-            link="https://github.com/mogamiGit/Ohtaku"
-          >
-            <div slot="icon">
-              <img
-                class="w-4 h-4"
-                src="images/github-icon.svg"
-                alt="github icon"
-              />
-            </div>
-          </Button>
-        </AccordionItem>
+        {
+          projects.map((item) => {
+            return (
+              <AccordionItem
+                client:load
+                name={item.title}
+                highlight={item.subtitle}
+                synopsis={item.title}
+                description={item.description}
+                mobileImgUrl={item.mobileImgUrl}
+                desktopImgUrl={item.desktopImgUrl}
+                alt={item.altImage}
+                checkItems={item.checks}
+              >
+                {item.buttons.map((button) => {
+                  return (
+                    <Button text={button.text} link={button.link}>
+                      <div slot="icon">
+                        <img
+                          class="w-4 h-4"
+                          src={button.icon.src}
+                          alt={button.icon.alt}
+                        />
+                      </div>
+                    </Button>
+                  );
+                })}
+              </AccordionItem>
+            );
+          })
+        }
       </section>
       <section
         id="experience"
