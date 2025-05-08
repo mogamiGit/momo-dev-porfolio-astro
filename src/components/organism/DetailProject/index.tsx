@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import H1 from "../../atoms/H1";
 import DropdownCard from "./DropdownCard";
 import HorizontalScrollCarousel from "./HorizontalScrollCarousel";
@@ -47,6 +47,7 @@ interface Props {
 }
 
 const DetailProject: React.FC<Props> = ({ title, linkImage, infoDetail, dropdownCards, horizontalScrollCarousel, ...rest }) => {
+
   return (
     <Fragment>
       <section className="flex flex-col lg:flex-row w-full mx-auto gap-10 md:gap-8 items-center p-8">
@@ -60,6 +61,7 @@ const DetailProject: React.FC<Props> = ({ title, linkImage, infoDetail, dropdown
           src={linkImage}
           alt={`header image del proyecto: ${title}`}
           className="h-auto w-full max-w-[800px] object-cover"
+          initial={{ opacity: 0 }}
           animate={{ scale: [0.9, 1], opacity: [0, 1] }}
           transition={{ delay: 0.6, duration: 0.5, type: "ease-out" }}
         />
