@@ -3,18 +3,14 @@ import SectionDescription from "../../molecules/SectionDescription";
 import Button from "../../atoms/Button";
 import ArrowDiagonalIcon from "../../../../public/images/arrowDiagonalIcon";
 import * as motion from "motion/react-client";
-
-interface Button {
-  link: string;
-  text: string;
-}
+import type { ButtonData } from "./types";
 
 interface Props {
   year: string;
   client?: string;
   description: string;
   tags?: string[];
-  button?: Button;
+  button?: ButtonData;
 }
 
 const InfoDetail: React.FC<Props> = ({ year, client, description, tags, button }) => {

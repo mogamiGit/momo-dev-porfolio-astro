@@ -7,10 +7,6 @@ interface Card {
   className?: string;
 }
 
-interface Props {
-
-}
-
 const IconCard: React.FC<Card> = ({ text, sign, className }) => {
   const borderClass = classNames("border-gray-300 dark:border-gray-500")
 
@@ -26,7 +22,7 @@ const IconCard: React.FC<Card> = ({ text, sign, className }) => {
   );
 };
 
-const ChallengeSolutions: React.FC<Props> = () => {
+const ChallengeSolutions: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row items-start">
       <div className='flex flex-col md:flex-row items-center'>

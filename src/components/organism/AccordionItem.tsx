@@ -83,29 +83,27 @@ const AccordionItem: React.FC<Props> = ({
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
             style={{ overflow: 'hidden' }}
           >
-            {/* Replicated ProjectContent.astro structure */}
             <div className="border-t border-gray-200 dark:border-gray-700">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                <picture className="m-0 w-full flex md:justify-start justify-center md:w-1/2">
-                  <source media="(max-width: 799px)" srcSet={mobileSrc} />
-                  <source media="(min-width: 800px)" srcSet={desktopSrc} />
+              <div className="flex flex-col lg:flex-row justify-between items-center">
+                <picture className="m-0 w-full flex md:justify-start justify-center lg:w-1/2">
+                  <source media="(max-width: 899px)" srcSet={mobileSrc} />
+                  <source media="(min-width: 900px)" srcSet={desktopSrc} />
                   <img src={desktopSrc} alt={alt} className="max-w-full h-auto" />
                 </picture>
                 {/* Content Details */}
-                <div className="w-full md:w-1/2 flex flex-col flex-start items-start gap-6 p-5 md:p-10">
+                <div className="w-full lg:w-1/2 flex flex-col flex-start items-start gap-2 md:gap-4 p-4">
                   <p className="text-2xl font-semibold">
                     {synopsis}
                   </p>
                   <p>
                     {description}
                   </p>
-                  {/* Check Items */}
                   <div className="flex gap-x-5 pb-6 flex-wrap">
                     {checkItems.map((item, index) => (
                       <Check key={index} text={item} />
                     ))}
                   </div>
-                  <div className='flex gap-4 items-center'>
+                  <div className='flex justify-start gap-4 items-center flex-wrap mb-8 md:mb-0'>
                     {children}
                   </div>
                 </div>
