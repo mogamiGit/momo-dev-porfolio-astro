@@ -16,6 +16,8 @@ const ContactForm: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const isDisabled = !formData.from_name || !formData.from_email || !formData.message;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -69,6 +71,7 @@ const ContactForm: React.FC = () => {
             type="submit"
             text='Enviar formulario'
             className='mt-3'
+            disabled={isDisabled}
           />
         </form>
       </div>
