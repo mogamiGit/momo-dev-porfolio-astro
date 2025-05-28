@@ -1,19 +1,12 @@
 ---
 import Header from "../components/organism/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import TitleSymbol from "../components/atoms/TitleSymbol.astro";
-import Bullets from "../components/atoms/Bullets.astro";
-import Button from "../components/atoms/Button.tsx";
-import Tag from "../components/atoms/Tag.tsx";
-import ListItem from "../components/molecules/ListItem.tsx";
-import HighlightedTitle from "../components/atoms/HighlightedTitle.tsx";
-import H1 from "../components/atoms/H1.tsx";
-import H4 from "../components/atoms/H4.tsx";
-import TitleSection from "../components/atoms/TitleSection.tsx";
-import SectionDescription from "../components/molecules/SectionDescription.tsx";
-import ContactForm from "../components/organism/ContactForm.tsx";
-import AccordionItem from "../components/organism/AccordionItem";
-import { projects } from "../data/allProjectsData";
+import Hero from "../components/organism/Hero";
+import HighlightPoints from "../components/organism/HighlightPoints";
+import Projects from "../components/organism/Projects";
+import Experience from "../components/organism/Experience";
+import About from "../components/organism/About";
+import Contact from "../components/organism/Contact";
 ---
 
 <Layout
@@ -24,6 +17,7 @@ import { projects } from "../data/allProjectsData";
     <a class="hover:font-bold duration-200" href="#projects">Projects</a>
     <a class="hover:font-bold duration-200" href="#experience">Experience</a>
     <a class="hover:font-bold duration-200" href="#about">About me</a>
+    <a class="hover:font-bold duration-200" href="#contact">Contact</a>
   </Header>
   <main>
     <div
@@ -46,253 +40,13 @@ import { projects } from "../data/allProjectsData";
         </svg>
       </a>
     </div>
-    <section
-      class="w-full mx-auto flex flex-col-reverse md:flex-row justify-between gap-x-10 items-top"
-    >
-      <div
-        class="flex justify-center flex-col px-6 md:py-6 xl:px-0 space-y-6 gap-4 md:gap-2 lg:max-w-md md:max-w-sm"
-      >
-        <div class="sm:mt-20 md:mt-35 flex flex-col gap-2">
-          <div id="tag" class="pb-3">
-            <Tag
-              client:load
-              text="Open to Work 👩‍💻"
-              variant="yellow"
-              delay={1.3}
-            />
-          </div>
-          <H4 client:load text="Freelance Graphic Designer · Front-End Dev" />
-          <H1 client:load text="Hi, my name is Mónica Galán" />
-        </div>
-        <p>
-          Front-end Developer with a passion for web design and design systems.
-          Skilled at crafting user-friendly and visually appealing interfaces,
-          with a commitment to creating innovative web experiences and
-          continuously advancing front-end development skills.
-        </p>
-      </div>
-      <div class="w-full h-auto pl-5 mx-0">
-        <img class="w-full" src="images/image-hero.png" alt="" />
-      </div>
-    </section>
-    <section
-      id="sintetic"
-      class="w-full mx-auto flex md:flex-row sm:flex-col justify-center gap-10 px-8 flex-wrap"
-    >
-      <HighlightedTitle client:load title="8+" subtitle="Years of Experience" />
-      <div class="border-r hidden md:block border-gray-300 w-3"></div>
-      <HighlightedTitle
-        client:load
-        title="Multidisciplinary"
-        subtitle="Profesional profile"
-      />
-      <div class="border-r hidden md:block border-gray-300 w-3"></div>
-      <HighlightedTitle
-        client:load
-        title="UX / UI"
-        subtitle="Design passionate"
-      />
-    </section>
+    <Hero client:load />
+    <HighlightPoints client:load />
     <div class="flex flex-col px-4">
-      <section
-        id="projects"
-        class="w-full mx-auto pt-20"
-        data-scroll="seccion1"
-      >
-        <TitleSection client:load text="projects" />
-        {
-          projects.map((item) => {
-            return (
-              <AccordionItem
-                client:load
-                name={item.title}
-                highlight={item.subtitle}
-                synopsis={item.title}
-                description={item.description}
-                mobileImgUrl={item.mobileImgUrl}
-                desktopImgUrl={item.desktopImgUrl}
-                alt={item.altImage}
-                checkItems={item.checks}
-              >
-                {item.buttons.map((button) => {
-                  return (
-                    <Button text={button.text} link={button.link}>
-                      <div slot="icon">
-                        <img
-                          class="w-4 h-4"
-                          src={button.icon.src}
-                          alt={button.icon.alt}
-                        />
-                      </div>
-                    </Button>
-                  );
-                })}
-              </AccordionItem>
-            );
-          })
-        }
-      </section>
-      <section
-        id="experience"
-        class="w-full mx-auto pt-20"
-        data-scroll="seccion2"
-      >
-        <TitleSection client:load text="experience" />
-        <div class="px-5 pt-8">
-          <div class="grid grid-cols-1 gap-14 md:grid-cols-2">
-            <div>
-              <TitleSymbol>Education</TitleSymbol>
-              <ListItem
-                client:load
-                year="2024"
-                title="Ironhack"
-                subtitle="Industrial applications of machine learning and AI"
-              />
-              <ListItem
-                client:load
-                year="2023"
-                title="APPLE CODING ACADEMY"
-                subtitle="Swift Full Stack Bootcamp"
-              />
-              <ListItem
-                client:load
-                year="2021"
-                title="CICE, ESCUELA PROFESIONAL DE NUEVAS TECNOLOGIAS"
-                subtitle="App Development Master"
-              />
-              <ListItem
-                client:load
-                year="2018 - 2019"
-                title="CICE, ESCUELA PROFESIONAL DE NUEVAS TECNOLOGIAS"
-                subtitle="Web Design & Development Course"
-              />
-              <ListItem
-                client:load
-                year="2011 - 2015"
-                title="ESNE"
-                subtitle="Graphic and Multimedia Design Degree"
-              />
-            </div>
-            <div>
-              <TitleSymbol>Work</TitleSymbol>
-              <ListItem
-                client:load
-                year="2024 - today"
-                title="Freelance"
-                subtitle="Graphic designer & Frontend Developer"
-              />
-              <ListItem
-                client:load
-                year="2019 - 2024"
-                title="CHEIL WORLDWIDE"
-                subtitle="Visual & Web Layout designer"
-              />
-              <ListItem
-                client:load
-                year="2016 - 2019"
-                title="8BELTS"
-                subtitle="Graphic designer"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="about" class="w-full mx-auto pt-20" data-scroll="seccion3">
-        <div class="flex flex-col lg:flex-row-reverse gap-10 items-center">
-          <img
-            src="images/profile_photo.png"
-            alt="profile image"
-            class="max-w-80"
-          />
-          <div class="flex flex-col lg:flex-row gap-10">
-            <div>
-              <TitleSection client:load text="about_me" />
-            </div>
-            <p>
-              Hey you! I'm the creative mind behind the keyboard. Constantly on
-              the move and infusing energy into every project.
-              <br /><br />My mantra is simple: learn, design, develop, have fun,
-              repeat! Because, honestly, why should the process of creating
-              something incredible be boring? I love pushing boundaries,
-              exploring new trends, and finding the perfect balance between
-              functionality and style.
-              <br /><br />Let's turn your digital dreams into vibrant realities
-              together!
-            </p>
-          </div>
-        </div>
-        <div class="pt-6 flex flex-col gap-12">
-          <div class="mt-10">
-            <TitleSymbol>Hard skills</TitleSymbol>
-            <div class="flex gap-x-10 gap-y-8 flex-wrap mt-6">
-              <Bullets title="Languages">
-                <Tag client:load text="HTML" variant="gray" />
-                <Tag client:load text="CSS" variant="gray" />
-                <Tag client:load text="JS" variant="gray" />
-                <Tag client:load text="Swift" variant="gray" />
-              </Bullets>
-              <Bullets title="Frameworks and SDKs">
-                <Tag client:load text="React" variant="gray" />
-                <Tag client:load text="Astro" variant="gray" />
-                <Tag client:load text="Svelte" variant="gray" />
-                <Tag client:load text="SwiftUI" variant="gray" />
-                <Tag client:load text="SwiftData" variant="gray" />
-              </Bullets>
-              <Bullets title="Patterns">
-                <Tag client:load text="MVVM" variant="gray" />
-                <Tag client:load text="MVC" variant="gray" />
-              </Bullets>
-              <Bullets title="Tools & Technologies">
-                <Tag client:load text="Figma" variant="gray" />
-                <Tag client:load text="RESTful APIs" variant="gray" />
-                <Tag client:load text="Postman" variant="gray" />
-                <Tag client:load text="Git" variant="gray" />
-              </Bullets>
-              <Bullets title="Methodologies">
-                <Tag client:load text="Design Thinking" variant="gray" />
-                <Tag client:load text="Atomic Design" variant="gray" />
-                <Tag client:load text="Mobile First" variant="gray" />
-                <Tag client:load text="Agile" variant="gray" />
-              </Bullets>
-            </div>
-          </div>
-          <div class="flex flex-col gap-6">
-            <TitleSymbol>Soft skills</TitleSymbol>
-            <div class="flex flex-wrap gap-y-2">
-              <Tag client:load text="Constantly changing" variant="gray" />
-              <Tag client:load text="Self-taught" variant="gray" />
-              <Tag client:load text="Problem solving" variant="gray" />
-              <Tag client:load text="Teamwork" variant="gray" />
-            </div>
-          </div>
-          <picture> </picture>
-        </div>
-      </section>
-      <section
-        id="contact"
-        class="w-full mx-auto flex flex-col gap-10"
-        data-scroll="seccion4"
-      >
-        <TitleSection client:load text="break_the_ice" />
-        <div class="grid md:grid-cols-3 gap-10 grid-cols-1">
-          <div class="md:col-span-2 col-span-1">
-            <ContactForm client:load />
-          </div>
-          <div class="flex flex-col gap-8">
-            <SectionDescription
-              title="contact"
-              description="mogami.creative@gmail.com"
-            />
-            <div class="w-full flex flex-col gap-2">
-              <SectionDescription
-                title="linkedin"
-                description="monicagalandelallana"
-                link="https://www.linkedin.com/in/monicagalandelallana"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Projects client:load />
+      <Experience client:load />
+      <About client:load />
+      <Contact client:load />
     </div>
     <footer class="border-t px-6">
       <div class="w-full mx-auto py-10 text-sm opacity-80">

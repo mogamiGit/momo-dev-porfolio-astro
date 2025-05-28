@@ -14,7 +14,7 @@ const Tag: React.FC<Props> = ({ text, variant, delay }) => {
     {
       'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300 border border-yellow-200': variant === "yellow",
       'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 border border-blue-200': variant === "blue",
-      'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 border border-gray-200': variant === "gray"
+      'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-400 hover:text-black hover:border-gray-300 dark:hover:text-white dark:hover:border-gray-100': variant === "gray"
     }
   );
 
