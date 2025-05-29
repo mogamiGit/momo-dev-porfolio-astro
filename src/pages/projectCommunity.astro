@@ -1,20 +1,18 @@
 ---
 import DetailProject from "../components/organism/DetailProject";
-import Header from "../components/organism/Header.astro";
 import Layout from "../layouts/Layout.astro";
 
-import { infoDetail, techs, horizontalScrollCarousel } from "../data/escohotadoProjectData";
+import {
+  infoDetail,
+  techs,
+  horizontalScrollCarousel,
+} from "../data/escohotadoProjectData";
 ---
 
 <Layout
   title="Mogami Porfolio"
   description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras."
 >
-  <Header>
-    <a class="hover:font-bold duration-200" href="#projects">Projects</a>
-    <a class="hover:font-bold duration-200" href="#experience">Experience</a>
-    <a class="hover:font-bold duration-200" href="#about">About me</a>
-  </Header>
   <main class="mt-[6rem] w-full">
     <DetailProject
       title="Dynamic Knowledge Hub"
