@@ -1,0 +1,28 @@
+---
+import DetailProject from "../components/organism/DetailProject";
+import Layout from "../layouts/Layout.astro";
+
+import {
+  infoDetail,
+  techs,
+  horizontalScrollCarousel,
+  iconsRiveDecoration,
+} from "../data/englishTeacherProjectData";
+---
+
+<Layout
+  title="Mogami Porfolio"
+  description="Front-end Developer apasionado por el diseño web y sistemas de diseño. Especializado en interfaces atractivas y fáciles de usar, con un enfoque en crear experiencias web innovadoras."
+>
+  <main class="mt-[6rem] w-full">
+    <DetailProject
+      title="Animate Your English"
+      linkImage="/images/projects/englishTeacher/header_english.png"
+      infoDetail={infoDetail}
+      dropdownCards={techs}
+      horizontalScrollCarousel={horizontalScrollCarousel}
+      iconsRiveDecoration={iconsRiveDecoration}
+      client:load
+    />
+  </main>
+</Layout>

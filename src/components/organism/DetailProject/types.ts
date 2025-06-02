@@ -21,10 +21,17 @@ export type CardData = {
   url: string;
   title: string;
   id: number;
+  type: "image" | "video";
 };
 
 export type HorizontalScrollCarouselData = {
   title: string;
   description: string;
   cards: CardData[];
+}
+
+export interface RiveFileData {
+  src: string;
+  stateMachine: string;
+  className?: string;
 }

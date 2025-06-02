@@ -1,5 +1,30 @@
 export const projects = [
   {
+    title: 'Animate Your English',
+    subtitle: 'React · Rive',
+    description: 'Personal English tutoring website combining custom animations and a seamless user experience.',
+    buttons: [
+      {
+        text: 'Go to Detail project',
+        link: '/projectEnglishTeacher',
+        icon: {
+          src: 'images/code-analysis.svg',
+          alt: 'magnifying glass code icon'
+        }
+      },
+    ],
+    checks: [
+      "React",
+      "Astro",
+      "Rive",
+      "Motion.dev"
+    ],
+    mobileImgUrl: "englishTeacher/project04-image-mobile.jpg",
+    desktopImgUrl: "englishTeacher/project04-image-desktop.jpg",
+    altImage: 'Jay faris Home Project',
+    onClick: () => console.log('Animate Your English')
+  },
+  {
     title: 'Dynamic Knowledge Hub',
     subtitle: 'React · Storybook',
     description: 'This website will serve as the official central hub for the community of philosopher and thinker Escohotado.',
