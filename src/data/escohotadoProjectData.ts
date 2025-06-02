@@ -1,3 +1,5 @@
+import type { CardData } from "../components/organism/DetailProject/types";
+
 export const description =
   "I contributed to the end-to-end creation of a website and knowledge community from scratch, working collaboratively with another developer. I was responsible for designing the interface, ensuring visual consistency and efficient component reuse throughout React by implementing a well-structured design system implemented in Storybook. <br><br>I led the integration of functional components in the prototype, prioritizing optimization of the user experience and scalability. To ensure high-quality, secure code, I utilized advanced tools and approaches that facilitated the development of a robust solution.";
 
@@ -43,26 +45,30 @@ export const techs = [
   },
 ];
 
-export const cards = [
+export const cards: CardData[] = [
   {
     url: "/images/projects/escohotado/top_03_community.jpg",
     title: "Dynamic Grid Content",
     id: 1,
+    type: 'image',
   },
   {
     url: "/images/projects/escohotado/top_01_community.jpg",
     title: "User Login",
     id: 1,
+    type: 'image',
   },
   {
     url: "/images/projects/escohotado/top_02_community.jpg",
     title: "Responsive design",
     id: 1,
+    type: 'image',
   },
   {
     url: "/images/projects/escohotado/top_04_community.jpg",
     title: "User interactions and animations",
     id: 1,
+    type: 'image',
   },
 ];
 

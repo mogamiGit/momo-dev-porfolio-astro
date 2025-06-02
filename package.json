@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "^5.1.1",
     "@emailjs/browser": "^4.4.1",
     "@jridgewell/sourcemap-codec": "^1.5.0",
+    "@rive-app/react-canvas": "^4.21.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",

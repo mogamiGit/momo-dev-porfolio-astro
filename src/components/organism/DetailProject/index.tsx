@@ -1,11 +1,10 @@
-import React, { Fragment, useState, useEffect } from "react";
-import H1 from "../../atoms/H1";
+import React, { Fragment } from "react";
 import DropdownCard from "./DropdownCard";
 import HorizontalScrollCarousel from "./HorizontalScrollCarousel";
 import InfoDetail from "./InfoDetail";
-import * as motion from "motion/react-client";
 import TitleSection from "../../atoms/TitleSection";
-import type { infoDetailData, DropdownCardData, HorizontalScrollCarouselData } from "./types"
+import type { infoDetailData, DropdownCardData, HorizontalScrollCarouselData, RiveFileData } from "./types"
+import HeaderDetail from "./HeaderDetail";
 
 interface Props {
   title: string;
@@ -14,28 +13,18 @@ interface Props {
   dropdownCards: DropdownCardData[];
   horizontalScrollCarousel: HorizontalScrollCarouselData;
   children?: React.ReactNode;
+  iconsRiveDecoration?: RiveFileData[];
 }
 
-const DetailProject: React.FC<Props> = ({ title, linkImage, infoDetail, dropdownCards, horizontalScrollCarousel, ...rest }) => {
+const DetailProject: React.FC<Props> = ({ title, linkImage, infoDetail, dropdownCards, horizontalScrollCarousel, iconsRiveDecoration = [], ...rest }) => {
 
   return (
     <Fragment>
-      <section className="flex flex-col lg:flex-row w-full mx-auto gap-10 md:gap-8 items-center p-8">
-        <div>
-          <H1
-            className="line-clamp-5"
-            text={title}
-          />
-        </div>
-        <motion.img
-          src={linkImage}
-          alt={`header image del proyecto: ${title}`}
-          className="h-auto w-full max-w-[800px] object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ scale: [0.9, 1], opacity: [0, 1] }}
-          transition={{ delay: 0.6, duration: 0.5, type: "ease-out" }}
-        />
-      </section>
+      <HeaderDetail
+        title={title}
+        linkImage={linkImage}
+        iconsRiveDecoration={iconsRiveDecoration}
+      />
       <section className="mx-auto flex flex-col gap-16 pt-10 md:pt-16 mb-6">
         <InfoDetail
           year={infoDetail.year}
