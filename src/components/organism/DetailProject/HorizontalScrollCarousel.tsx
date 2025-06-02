@@ -35,14 +35,14 @@ const HorizontalScrollCarousel: React.FC<Props> = ({ title, description, cards }
             <p className="text-gray-600 dark:text-gray-200"><span dangerouslySetInnerHTML={{ __html: description }} /></p>
           </motion.div>
           <motion.div style={{ x, transition: "transform 0.5s ease-out" }} className="flex gap-[7rem] md:gap-[6rem] items-center">
-            {cards.map((card) => {
+            {cards.map((card, index) => {
               return (
                 <CardCarousel card={{
                   url: card.url,
                   title: card.title,
                   id: card.id,
                   type: card.type,
-                }} />
+                }} key={index} />
               );
             })}
             <div className="flex-shrink-0 md:w-0 w-[12rem]" />

@@ -20,8 +20,8 @@ export const ArrowDiagonalIcon: React.FC<Props> = ({
       className={iconClass}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M3 11L11 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M10.9998 8.40263V3H5.59717" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3 11L11 3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10.9998 8.40263V3H5.59717" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 };
