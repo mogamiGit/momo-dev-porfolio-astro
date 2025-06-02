@@ -10,5 +10,8 @@ export default defineConfig({
   base: './',
   integrations: [tailwind(), relativeLinks(), react()],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({
+    mode: 'directory',
+    functionPerRoute: false
+  })
 });
