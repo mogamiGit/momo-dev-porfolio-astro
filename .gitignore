@@ -25,3 +25,4 @@ docs/
 
 # cursor configuration
 cursor.config.js
+.vercel

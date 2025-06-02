@@ -39,8 +39,9 @@ const DetailProject: React.FC<Props> = ({ title, linkImage, infoDetail, dropdown
             className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
           >
             {
-              dropdownCards.map((item) => (
+              dropdownCards.map((item, index) => (
                 <DropdownCard
+                  key={index}
                   title={item.title}
                   description={item.description}
                   emoji={item.emoji}
