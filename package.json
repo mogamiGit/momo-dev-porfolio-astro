@@ -14,6 +14,7 @@
     "@astrojs/cloudflare": "^12.2.1",
     "@astrojs/react": "^3.3.2",
     "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/vercel": "^8.1.4",
     "@emailjs/browser": "^4.4.1",
     "@jridgewell/sourcemap-codec": "^1.5.0",
     "@rive-app/react-canvas": "^4.21.1",
