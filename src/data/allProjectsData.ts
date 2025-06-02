@@ -6,7 +6,7 @@ export const projects = [
     buttons: [
       {
         text: 'Go to Detail project',
-        link: '/projectEnglishTeacher',
+        link: '/projectEnglishTeacher/',
         icon: {
           src: 'images/code-analysis.svg',
           alt: 'magnifying glass code icon'
@@ -31,7 +31,7 @@ export const projects = [
     buttons: [
       {
         text: 'Go to Detail project',
-        link: '/projectCommunity',
+        link: '/projectCommunity/',
         icon: {
           src: 'images/code-analysis.svg',
           alt: 'magnifying glass code icon'
