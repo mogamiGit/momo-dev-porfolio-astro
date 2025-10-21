@@ -9,6 +9,7 @@ const ContactForm: React.FC = () => {
     from_name: '',
     from_email: '',
     message: '',
+    middle_name: '', 
   });
   const [status, setStatus] = useState('');
 
@@ -21,6 +22,12 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (formData.middle_name) {
+      setStatus('¡Mensaje enviado correctamente!');
+      setFormData({ from_name: '', from_email: '', message: '', middle_name: '' });
+      return;
+    }
+
     try {
       const response = await emailjs.send(
         'service_1lxyd3w',       // Service ID
@@ -30,7 +37,7 @@ const ContactForm: React.FC = () => {
       );
       console.log('SUCCESS!', response.status, response.text);
       setStatus('¡Mensaje enviado correctamente!');
-      setFormData({ from_name: '', from_email: '', message: '' });
+      setFormData({ from_name: '', from_email: '', message: '', middle_name: '' });
     } catch (error) {
       console.error('FAILED...', error);
       setStatus('Error al enviar el mensaje. Intenta de nuevo.');
@@ -66,6 +73,24 @@ const ContactForm: React.FC = () => {
             placeholder="¡Hola! Cuéntame tu idea o consulta... Estoy lista para escucharte.*"
             required
             inputName='Tu mensaje'
+          />
+          <input
+            type="text"
+            name="middle_name"
+            value={formData.middle_name}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            placeholder="Middle name"
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              width: '1px',
+              height: '1px',
+              opacity: 0,
+              pointerEvents: 'none'
+            }}
+            aria-hidden="true"
           />
           <Button
             type="submit"
