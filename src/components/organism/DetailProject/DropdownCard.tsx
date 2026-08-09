@@ -27,7 +27,7 @@ const DropdownCard: React.FC<Props> = ({ title, description, emoji, className })
           className="text-xl"
           layout
           animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.5, type: "linear" }}
+          transition={{ duration: 0.5, type: "tween", ease: "linear" }}
         >{emoji}</motion.p>
         <motion.p className="w-full text-lg leading-[1.2] font-semibold line-clamp-2 break-words">{title}</motion.p>
         <ArrowLinkIcon className={`animate-pulse text-blue-violet dark:text-white ${isOpen ? "rotate-90" : "rotate-0"}`} />
@@ -37,7 +37,7 @@ const DropdownCard: React.FC<Props> = ({ title, description, emoji, className })
           <motion.p
             className="line-clamp-6 text-md leading-[1.5] md:text-sm text-gray-500"
             animate={{ opacity: isOpen ? [0, 0.5, 1] : [1, 0.5, 0] }}
-            transition={{ opacity: { delay: 0.3, type: "ease-in-out" } }}
+            transition={{ opacity: { delay: 0.3, type: "tween", ease: "easeInOut" } }}
           >
             <span dangerouslySetInnerHTML={{ __html: description }} />
           </motion.p>
