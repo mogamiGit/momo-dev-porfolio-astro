@@ -26,7 +26,7 @@ const HeaderDetail: React.FC<Props> = ({ title, linkImage, iconsRiveDecoration =
           className="h-auto w-full max-w-[800px] object-cover"
           initial={{ opacity: 0 }}
           animate={{ scale: [0.9, 1], opacity: [0, 1] }}
-          transition={{ delay: 0.6, duration: 0.5, type: "ease-out" }}
+          transition={{ delay: 0.6, duration: 0.5, type: "tween", ease: "easeOut" }}
         />
       </div>
 

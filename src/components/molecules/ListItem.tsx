@@ -54,7 +54,7 @@ const ListItem: React.FC<Props> = ({ year, title, subtitle }) => {
             className="font-kalnia font-bold"
             variants={yearAnimation}
             transition={{
-              scaleY: { duration: 0.5, type: "damping", bounce: 0.2 },
+              scaleY: { duration: 0.5, type: "spring", bounce: 0.2 },
               opacity: { duration: 0.3 }
             }}
             style={{ transformOrigin: "bottom" }}
